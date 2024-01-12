@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'comics',
+    'authors',
+    'characters',
 ]
 
 MIDDLEWARE = [

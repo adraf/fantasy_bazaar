@@ -4,9 +4,17 @@ from django.db import models
 class Comic(models.Model):
   title = models.CharField(max_length=255)
   artwork = models.CharField(max_length=255)
-  author = models.CharField(max_length=255)
+  # author = models.CharField(max_length=255)
+  authors = models.ManyToManyField(
+    to='authors.Author',
+    related_name='comics'
+  )
   artist = models.CharField(max_length=255)
-  character = models.CharField(max_length=255)
+  # character = models.CharField(max_length=255)
+  characters = models.ManyToManyField(
+    to='characters.Character',
+    related_name='comics'
+  )
   description = models.CharField(max_length=255)
   release_date = models.DateField()
   owner = models.ForeignKey(
@@ -17,9 +25,10 @@ class Comic(models.Model):
   )
   favourites = models.ManyToManyField(
     to='users.User',
-    related_name = 'comics_fav'
+    related_name = 'comics_fav',
+    blank=True
   )
 
   def __str__(self):
-    return f'{self.title} - {self.author} ({self.release_date})'
+    return f'{self.title} - {self.authors} ({self.release_date})'
 

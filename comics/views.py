@@ -27,7 +27,6 @@ class ComicDetailView(RetrieveUpdateDestroyAPIView):
 
   def get_serializer_class(self):
     if self.request.method == 'GET':
-    # if self.request.method == 'PUT':
       return ComicListSerializer
     else: 
       return ComicSerializer
