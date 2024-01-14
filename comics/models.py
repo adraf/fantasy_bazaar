@@ -15,7 +15,7 @@ class Comic(models.Model):
     to='characters.Character',
     related_name='comics'
   )
-  description = models.CharField(max_length=255)
+  description = models.CharField(max_length=2000)
   release_date = models.DateField()
   owner = models.ForeignKey(
     to='users.User',
@@ -30,5 +30,5 @@ class Comic(models.Model):
   )
 
   def __str__(self):
-    return f'{self.title} - {self.authors} ({self.release_date})'
+    return f'{self.title} ({self.release_date})'
 

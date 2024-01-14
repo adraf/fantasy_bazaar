@@ -1,10 +1,13 @@
+import { Outlet } from "react-router-dom"
+// Components
+import Home from "./components/Home.jsx"
 
 function App() {
-
-
   return (
     <>
-      <h1>Hello new project!</h1>
+      <Home />
+      {/* <h1>Hello new project!</h1> */}
+      <Outlet />
     </>
   )
 }
