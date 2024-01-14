@@ -5,4 +5,6 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
   # address = models.TextField(max_length=300, blank=True, null=True)
   # profile_image = models.TextField(max_length=300, blank=True, null=True)
-  pass
+  first_name = models.CharField(max_length=255)
+  last_name = models.CharField(max_length=255)
+  
