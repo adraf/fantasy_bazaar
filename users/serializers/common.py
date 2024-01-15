@@ -29,8 +29,15 @@ class ComicListUserSerializer(serializers.ModelSerializer):
     model = User
     fields = ['username']
 
-# Test
+# Single User
 class UserInfoSerializer(serializers.ModelSerializer):
   class Meta:
     model = User
-    fields = ['id', 'username', 'email']
+    fields = ['id', 'username', 'email', 'first_name', 'last_name']
+
+# All Users
+class AllUserInfoSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = User
+    fields = ['id', 'username']
+ 

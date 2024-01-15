@@ -39,14 +39,6 @@ export default function RegisterUser(){
       fillFields < 6 ? submitBtn.disabled = true : submitBtn.disabled = false
     }
   }) 
-  // const artUploadField = document.querySelector('.artUploadField')
-  // const submitBtn = document.querySelector('.submit_button')
-  // if (fillFields === 6) {
-  // // && !artUploadField.value !== true) 
-  //   submitBtn.disabled = false
-  // } 
-
-  // console.log(fillFields)
 
   function authenticate(event) {
     event.preventDefault()
@@ -54,7 +46,7 @@ export default function RegisterUser(){
     const usersData = Object.fromEntries(formData.entries())
     console.log('authenticate', usersData)
 
-    // password confirmation message
+    // TODO: password confirmation message - toast
     // if (usersData.password !== usersData.password_confirmation) {
       const passwordToast = document.querySelector('.password_confirmation_toast')
       passwordToast.style.display = 'none'

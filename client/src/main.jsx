@@ -17,7 +17,8 @@ import RegisterUser from './components/RegisterUser.jsx'
 import User from './components/User.jsx'
 
 // Loaders
-import { getIndComic } from './utils/loaders/comicLoader.js';
+import { getIndComic } from './utils/loaders/comicLoader.js'
+import { getIndUser, getUserData } from './utils/loaders/userLoader.js'
 
 const router = createBrowserRouter([
   {
@@ -42,12 +43,14 @@ const router = createBrowserRouter([
         element: <Character />
       },
       {
-        path: '/user',
-        element: <User />
+        path: '/auth/user/:id',
+        element: <User />,
+        loader: async ({ params }) => getIndUser(params.id)
       },
       {
         path: '/login',
-        element: <Login />
+        element: <Login />,
+        loader: async ({ params }) => getUserData(params.id)
       },
       {
         path: '/register',

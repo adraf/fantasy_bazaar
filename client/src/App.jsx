@@ -1,11 +1,12 @@
-import { Outlet } from "react-router-dom"
+import { Outlet } from 'react-router-dom'
 // Components
-import Home from "./components/Home.jsx"
+import NavBar from './components/NavBar.jsx'
+// import { useState } from 'react'
 
 function App() {
   return (
     <>
-      <Home />
+      <NavBar />
       {/* <h1>Hello new project!</h1> */}
       <Outlet />
     </>

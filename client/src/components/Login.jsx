@@ -1,20 +1,18 @@
-// import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { useLoaderData } from 'react-router-dom'
+import { setToken } from '../utils/helpers/common'
 
 export default function Login(){
 
-  // States
-  // const [userData, setUserData] = 
-
-  const navigateTo = useNavigate()
+  // Loaders
+  const userInfo = useLoaderData()
   
   async function submitData(usersData) {
     try {
       const res = await axios.post('api/auth/login/', usersData)
       const stagedData = res.data
-      // console.log('Success', stagedData)
-      navigateTo('/')
+      setToken(stagedData.access)
+      window.location.href = '/'
       return stagedData
     } catch (error) {
       console.log(error)
@@ -25,7 +23,13 @@ export default function Login(){
     event.preventDefault()
     const loginData = new FormData(event.target)
     const usersData = Object.fromEntries(loginData.entries())
-    // console.log('authenticate', usersData)
+    // search through list of users for matching username and return the id for that user
+    userInfo.forEach(userVal => {
+      if (userVal.username === usersData.username) {
+        localStorage.setItem('current_username', userVal.username)
+        return userVal
+      }
+    })
     submitData(usersData)
   }
 
