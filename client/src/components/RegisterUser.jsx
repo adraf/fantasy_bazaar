@@ -44,14 +44,14 @@ export default function RegisterUser(){
     event.preventDefault()
     const formData = new FormData(event.target)
     const usersData = Object.fromEntries(formData.entries())
-    console.log('authenticate', usersData)
+    // console.log(formData)
+    // console.log('authenticate', usersData)
 
     // TODO: password confirmation message - toast
     // if (usersData.password !== usersData.password_confirmation) {
       const passwordToast = document.querySelector('.password_confirmation_toast')
       passwordToast.style.display = 'none'
     // }
-
     submitData(usersData)
   }
 

@@ -1,11 +1,10 @@
-import { useLoaderData, useNavigate } from 'react-router-dom'
+import { useLoaderData } from 'react-router-dom'
 import { deleteUser } from '../utils/actions/userAction'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 export default function User(){
-  const navigate = useNavigate()
 
   const [show, setShow] = useState(false);
 
@@ -28,7 +27,6 @@ export default function User(){
     deleteUser(userId)
     handleClose()
     localStorage.clear()
-    // navigate('/register')
     window.location.href = '/register'
   }
 
@@ -40,7 +38,11 @@ export default function User(){
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{first_name} {last_name} ({username})</Modal.Title>
+          {first_name || last_name !== '' ? 
+            <Modal.Title>{first_name} {last_name} ({username})</Modal.Title>
+            :
+            <Modal.Title>{username}</Modal.Title>
+          }
         </Modal.Header>
         <Modal.Body>Are you sure you would like to delete your account?</Modal.Body>
         <Modal.Footer>

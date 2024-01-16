@@ -1,0 +1,48 @@
+#all-comics-main {
+  height: 100%;
+  width: 100%;
+  @include flex(row, center, space-evenly);
+
+}
+
+.all-comics-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.all-comics-image {
+  @include flex(row, flex-start, flex-end);
+  height: 220px;
+  width: 140px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 10px;
+}
+
+.all-comics-info-div {
+  @include flex(column, center, space-evenly);
+}
+
+.all-comics-info-div p { 
+  padding: 2px;
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.all-comics-favourite-btn {
+  color: white;
+  padding: 3px;
+  height: 2.2em;
+  width: 2.2em;
+}
+
+.bi-chat-heart {
+  height: 2em;
+  width: 2em;
+}

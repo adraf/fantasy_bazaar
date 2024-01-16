@@ -11,3 +11,20 @@ export async function deleteUser(id) {
   console.log('complete')
   return redirect('/register')
 }
+
+// Add and take off Favourite Comic
+export async function addFavourite(id) {
+  const res = await axios.patch(`/api/comics/${id}/favourite/`, {
+      data: {
+        'favourites': []
+      }
+    },
+    {
+      headers: {
+        'Authorization': 'Bearer ' + getToken()
+      }
+    }
+  )
+  console.log('clicked!')
+  return res.data
+}
