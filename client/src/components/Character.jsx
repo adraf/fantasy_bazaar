@@ -1,5 +1,5 @@
 export default function Character(){
   return (
-    <h1>Character</h1>
+    <h2>Character</h2>
   )
 }

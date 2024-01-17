@@ -17,31 +17,34 @@ export default function ComicSingle(){
   } = singleComic
 
   return (
-    <>
-      <h1>ComicSingle</h1>
-      <div key={comicId}>
-        <p>{artwork}</p>
-        <p>{title}</p>
-        {authors.map(author => {
-          const { id, name } = author
-          return (
-            <div key={id}>
-              <p>{name}</p>
-            </div>
-          )
-        })}
-        <p>{artist}</p>
-        <p>{release_date}</p>
-        <p>{description}</p>
+    <section key={comicId} id='single-comic-main'>
+      <section id='single-page-top'>
+        <div className='single-page-image' style={{ backgroundImage: `url(${artwork})` }}></div>
+        <div id='single-page-information'>
+          <h2 className='single-page-title'>{title}</h2>
+          {authors.map(author => {
+            const { id, name } = author
+            return (
+              <div key={id} id='authors-div'>
+                <p className='single-page-names'>{name}</p>
+              </div>
+            )
+          })}
+          <p className='single-page-names'>{artist}</p>
+          <p className='single-page-date'>{release_date}</p>
+          <p className='single-page-description'>{description}</p>
+        </div>
+      </section>
+      <div id='single-page-linked-content'>
         {characters.map(character => {
           const { id, name } = character
           return (
-            <div key={id}>
+            <div key={id} className='content-div'>
               <p>{name}</p>
             </div>
           )
         })}
       </div>
-    </>
+    </section>
   )
 }

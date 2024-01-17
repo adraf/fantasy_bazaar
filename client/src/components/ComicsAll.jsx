@@ -3,13 +3,16 @@ import { useEffect, useState } from 'react'
 import { addFavourite } from '../utils/actions/userAction'
 // Bootstrap
 import { Link } from 'react-router-dom'
+import { activeUser } from '../utils/helpers/common'
 
 export default function ComicsAll(){
   // States
   const [allComics, setAllComics] = useState([])
 
   // ! Change in App and pass down
-  const current_username = localStorage.getItem('current_username')
+  // const currentUserID = localStorage.getItem('currentUserID')
+
+  const currentUserID = activeUser()
 
   const faveHeart = 
   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" className="bi bi-chat-heart-fill" viewBox="0 0 16 16">
@@ -31,15 +34,16 @@ export default function ComicsAll(){
     }
     getComicData()
   }, []) 
-
+  
   function isFavourite(userId, arr) {
-    return arr.some(user => user.username === current_username)
+    return arr.some(user => user.id === currentUserID)
   }
 
   return (
     <>
       <section id='all-comics-main'>
         {allComics.map(({ id, artwork, title, release_date, favourites }) => {
+          // console.log(favourites)
           function handleFavourite(event) {
             event.preventDefault()
             // Gets ID of clicked parent container
@@ -52,7 +56,7 @@ export default function ComicsAll(){
                 <div className='all-comics-favourite-btn' onClick={handleFavourite}>
                   <div className='favourite-icon'>
                     {
-                      isFavourite(current_username, favourites) ? faveHeart : noFaveHeart
+                      isFavourite(currentUserID, favourites) ? faveHeart : noFaveHeart
                     }
                   </div>
                 </div>

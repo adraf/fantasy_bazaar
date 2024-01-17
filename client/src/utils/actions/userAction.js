@@ -25,6 +25,6 @@ export async function addFavourite(id) {
       }
     }
   )
-  console.log('clicked!')
+  // console.log('Favourite!')
   return res.data
 }

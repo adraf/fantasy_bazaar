@@ -26,16 +26,16 @@ export default function Login(){
     // search through list of users for matching username and return the id for that user
     userInfo.forEach(userVal => {
       if (userVal.username === usersData.username) {
-        localStorage.setItem('current_username', userVal.username)
         return userVal
       }
-    })
+    }
+    )
     submitData(usersData)
   }
 
   return (
     <>
-      <h1>Login</h1>
+      <h2>Login</h2>
       <div>
         <form action='#' onSubmit={authenticate}>
           <input type='text' name='username' placeholder='Username'/>

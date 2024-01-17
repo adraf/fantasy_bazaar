@@ -1,0 +1,63 @@
+#single-comic-main {
+  height: 100%;
+  width: 100%;
+}
+
+.single-page-title {
+  font-size: 3em;
+  text-transform: uppercase
+}
+
+#single-page-top {
+  @include flex(row, center, space-evenly);
+  width: 90vw;
+  height: auto;
+  margin: 10px auto;
+}
+
+.single-page-image {
+  height: 380px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 10px;
+}
+
+#single-page-information {
+  @include flex(column, flex-start, space-evenly);
+  width: 50%;
+  min-height: 420px;
+  padding: 2em;
+}
+
+p {
+  margin: 0.5em 0;
+  padding: 0;
+}
+// Authors and Artists
+.single-page-names {
+  font-size: 1.2em;
+}
+
+.single-page-description {
+  font-size: 1.0em;
+  text-transform: none;
+}
+
+.single-page-date {
+  font-size: 0.9em
+}
+
+// Character Menu
+#single-page-linked-content {
+  @include flex(row, center, space-between);
+  overflow: auto;
+  white-space: nowrap;
+  padding: 20px;
+}
+
+// Character Div
+.content-div {
+  margin: 10px 25px;
+}

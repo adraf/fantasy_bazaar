@@ -15,6 +15,7 @@ import Home from './components/Home.jsx'
 import Login from './components/Login.jsx'
 import RegisterUser from './components/RegisterUser.jsx'
 import User from './components/User.jsx'
+import UserEdit from './components/UserEdit.jsx';
 
 // Loaders
 import { getIndComic } from './utils/loaders/comicLoader.js'
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <RegisterUser />,
+      },
+      {
+        path: '/auth/user/edit',
+        element: <UserEdit />,
       }
     ]
   }

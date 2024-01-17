@@ -1,15 +1,24 @@
 * {
   box-sizing: border-box;
-}
-
-html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Urbanist', sans-serif;
   font-size: 16px;
+  text-transform: uppercase;
 }
 
 body {
-  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f8f9fa;
   // font-family: ;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 // :root {
 

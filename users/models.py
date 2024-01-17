@@ -6,10 +6,5 @@ class User(AbstractUser):
   # profile_image = models.TextField(max_length=300, blank=True, null=True)
   first_name = models.CharField(max_length=255)
   last_name = models.CharField(max_length=255)
-  # favourites = models.ManyToManyField(
-  #   to='comics.Comic',
-  #   related_name = 'comics',
-  #   blank=True
-  # )
 
   

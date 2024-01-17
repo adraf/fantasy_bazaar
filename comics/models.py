@@ -25,7 +25,7 @@ class Comic(models.Model):
   )
   favourites = models.ManyToManyField(
     to='users.User',
-    related_name = 'comics',
+    related_name = 'comics_fav',
     blank=True
   )
 

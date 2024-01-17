@@ -1,50 +1,46 @@
 // import axios from 'axios'
+// import { useState, useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom"
-import { useState, useEffect } from 'react'
-import { activeUser, getToken, removeToken } from "../utils/helpers/common"
+import { activeUser, removeToken } from "../utils/helpers/common"
 
 export default function NavBar(){
 
-  // States
-  const [isAuth, setIsAuth] = useState(false)
-  // const userId = localStorage.getItem('current_user_id')
   const userId = activeUser()
+  
+  // ! Can get the ID, need to find username with it and change navbar 'Hi' message
+  // console.log('NAVBAR', userId)
 
-  const username = localStorage.getItem('current_username')
+  // const username = userInfo.username
 
   const navigateTo = useNavigate()
 
-  useEffect(() => {
-    if (getToken() !== null) {
-      setIsAuth(true)
-    } 
-  }, [isAuth])
-
   function logOut() {
     removeToken()
-    localStorage.clear()
-    setIsAuth(false)
     navigateTo('/')
+    localStorage.clear()
   }
 
   return (
     <>
-      <h1><Link to='/'>Nav</Link></h1>
-        <div>
-          <Link to='/character'>Character</Link>
-          <Link to='/comics_collection'>ComicsAll</Link>
-          {isAuth === true ? 
-            <div>
-              <Link to={`/auth/user/${userId}/`}>Hi, {username}</Link>
-              <Link to='/' onClick={logOut}>Logout</Link>
-            </div>
-            :
-            <div>
-              <Link to='/login'>Login</Link>
-              <Link to='/register'>Register</Link>
-            </div>
-          }
+      <header>
+        <div id="header-left-div">
+        {/* <Link to='/character'>Character</Link> */}
+        <Link to='/comics_collection'>Shop</Link>
         </div>
+        <h1><Link to='/'>Fantasy Bazaar</Link></h1>
+        {activeUser() ? 
+          <div id="header-right-div">
+            {/* <Link to={`/auth/user/${userId}/`}>Hi, {!userInfo.first_name ? username : userInfo.first_name}</Link> */}
+            <Link to={`/auth/user/${userId}/`}>Account</Link>
+            <Link to='/' onClick={logOut}>Logout</Link>
+          </div>
+          :
+          <div id="header-right-div">
+            <Link to='/login'>Login</Link>
+            <Link to='/register'>Register</Link>
+          </div>
+        }
+      </header>
     </>
   )
 }

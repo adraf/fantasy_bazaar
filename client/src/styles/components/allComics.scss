@@ -1,8 +1,8 @@
 #all-comics-main {
   height: 100%;
   width: 100%;
+  margin-top: 10px;
   @include flex(row, center, space-evenly);
-
 }
 
 .all-comics-section {

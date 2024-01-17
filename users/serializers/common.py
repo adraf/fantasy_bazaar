@@ -33,7 +33,7 @@ class ComicListUserSerializer(serializers.ModelSerializer):
 class UserInfoSerializer(serializers.ModelSerializer):
   class Meta:
     model = User
-    fields = ['id', 'username', 'email', 'first_name', 'last_name', 'comics']
+    fields = ['id', 'username', 'email', 'first_name', 'last_name', 'comics_fav']
 
 # All Users
 class AllUserInfoSerializer(serializers.ModelSerializer):

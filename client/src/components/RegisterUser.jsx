@@ -13,8 +13,8 @@ export default function RegisterUser(){
   async function submitData(usersData) {
     try {
       const res = await axios.post('api/auth/register/', usersData)
-      const stagedData = res.data
-      console.log('Success', stagedData)
+      // const stagedData = res.data
+      // console.log('Success', stagedData)
       navigate('/login')
     } catch (error) {
       console.log(error)
@@ -57,7 +57,8 @@ export default function RegisterUser(){
 
   return (
     <>
-      <ToastContainer className="password_confirmation_toast d-inline-block m-2" position="top-end">
+    {/* // ! Make toast message? */}
+      {/* <ToastContainer className="password_confirmation_toast d-inline-block m-2" position="top-end">
         <Toast className='bg-dark && text-white'>
           <Toast.Header>
             <img
@@ -72,8 +73,8 @@ export default function RegisterUser(){
             Passwords do not match
           </Toast.Body>
         </Toast>
-      </ToastContainer>
-      <h1>RegisterUser</h1>
+      </ToastContainer> */}
+      <h2>RegisterUser</h2>
       <div>
         <form action='#' onSubmit={authenticate}>
           <input type='text' name='first_name' placeholder='First Name' value={inputs.first_name || ''} onChange={handleChange} required/>

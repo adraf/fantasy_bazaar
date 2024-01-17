@@ -23,6 +23,11 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
       return UserInfoSerializer
     return ComicListUserSerializer
   
+  def get_serializer_class(self):
+    if self.request.method == 'PATCH':
+      return UserInfoSerializer
+    return ComicListUserSerializer
+  
 # See all users
 class AllUserDetailView(ListCreateAPIView):
   queryset = User.objects.all()
