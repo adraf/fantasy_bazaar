@@ -1,18 +1,18 @@
 import axios from 'axios'
-import { useLoaderData } from 'react-router-dom'
+import { useLoaderData, useNavigate } from 'react-router-dom'
 import { setToken } from '../utils/helpers/common'
 
 export default function Login(){
 
   // Loaders
   const userInfo = useLoaderData()
-  
+  const navigate = useNavigate()
   async function submitData(usersData) {
     try {
       const res = await axios.post('api/auth/login/', usersData)
       const stagedData = res.data
       setToken(stagedData.access)
-      window.location.href = '/'
+      navigate('/')
       return stagedData
     } catch (error) {
       console.log(error)

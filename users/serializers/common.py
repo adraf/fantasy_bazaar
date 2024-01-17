@@ -27,13 +27,13 @@ class RegistrationSerializer(serializers.ModelSerializer):
 class ComicListUserSerializer(serializers.ModelSerializer):
   class Meta:
     model = User
-    fields = ['username']
+    fields = ['id', 'username']
 
 # Single User
 class UserInfoSerializer(serializers.ModelSerializer):
   class Meta:
     model = User
-    fields = ['id', 'username', 'email', 'first_name', 'last_name']
+    fields = ['id', 'username', 'email', 'first_name', 'last_name', 'comics']
 
 # All Users
 class AllUserInfoSerializer(serializers.ModelSerializer):

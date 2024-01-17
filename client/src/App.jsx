@@ -3,6 +3,13 @@ import { Outlet } from 'react-router-dom'
 import NavBar from './components/NavBar.jsx'
 // import { useState } from 'react'
 
+// state for user = null
+
+// on token update run function useEffect(page load and update state on token change)
+// make call for user info
+
+// pass userState to navbar
+
 function App() {
   return (
     <>

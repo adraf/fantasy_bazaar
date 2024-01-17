@@ -51,9 +51,3 @@ class ComicFavView(UpdateAPIView):
       comic.favourites.add(request.user)
       comic.save()
       return Response(status=201)
-
-# Get favourited books
-# class FavComicsView(OwnerListCreateView):
-#   queryset = Comic.objects.all()
-#   serializer_class = FavouritedComicsSerializer
-#   permission_classes = IsAuthenticated
