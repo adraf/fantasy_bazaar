@@ -1,41 +1,46 @@
-import { useLoaderData, useNavigate } from 'react-router-dom'
+import { Link, useLoaderData, useNavigate } from 'react-router-dom'
+import { useOutletContext } from 'react-router-dom'
+import { useEffect, useState } from 'react';
 import { deleteUser } from '../utils/actions/userAction'
-import { useState } from 'react';
+import { activeUser, removeToken } from '../utils/helpers/common';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
+import { getComicData } from '../utils/loaders/comicLoader';
 
 export default function User(){
 
+  const [mainUserInfo, setMainUserInfo] = useOutletContext() 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  // const [show, setShow] = useState(false);
-
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
-
   const navigate = useNavigate()
+  // const [allComics, setAllComics] = useState([])
 
-  // Loaders
-  const singleUser = useLoaderData()
-  console.log(singleUser)
   const {
     id: userId,
     first_name,
     last_name,
     username,
     email,
-  } = singleUser
+    // comics_fav,
+  } = mainUserInfo
 
   function handleAccountDelete() {
     deleteUser(userId)
     handleClose()
-    localStorage.clear()
-    // ! Change?
+    removeToken()
+    setMainUserInfo('')
     navigate('/register')
   }
+
+  const comicData = useLoaderData()
+  // console.log(comicData.comicInfo[0].favourites[0].id)
+  const filteredComics = comicData.comicInfo.filter(function(comic) {
+    return comic.favourites.filter(function(fav) {
+      fav.id === 8 
+    })}
+  )
+  console.log(filteredComics)
 
   return (
     <>
@@ -43,7 +48,7 @@ export default function User(){
         Delete My Account
       </Button>
 
-      <Button variant="primary" href='/auth/user/edit/'>
+      <Button variant="primary" href={`/auth/user/${userId}/edit/`}>
         Edit Account
       </Button>
 
@@ -66,54 +71,6 @@ export default function User(){
           </Button>
         </Modal.Footer>
       </Modal>
-      
-
-
-
-      {/* <Button variant="primary" onClick={handleShow}>
-        Edit Account
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Edit User Information</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>First Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Peter"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Parker"
-              />
-            </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="peter@dailybugle.com"
-              />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-     */}
-
 
       <h2>User</h2>
       <div key={userId}>
@@ -121,6 +78,29 @@ export default function User(){
         <p>{last_name}</p>
         <p>{username}</p>
         <p>{email}</p>
+        <div id='single-page-linked-content'>
+          <section>
+            
+            {comicData.comicInfo.map(comic => {
+              const { id, artwork, title } = comic
+              return (
+                <Link key={id} id={id} to={`/comics/${id}`} className='all-comics-section'>
+                  <div className='all-comics-image' style={{ backgroundImage: `url(${artwork})` }}>
+                    {/* <div className='all-comics-favourite-btn' onClick={(e) => handleFavourite(e, id)}> */}
+                      {/* <div className='favourite-icon'>
+                        {isFavourite(activeUser(), favourites) ? faveHeart : noFaveHeart}
+                      </div> */}
+                    {/* </div> */}
+                  </div>
+                  <div className='all-comics-info-div'>
+                    <p>{title}</p>
+                    {/* <p>{release_date}</p> */}
+                  </div>
+                </Link>
+              )
+            })}
+          </section>
+        </div>
       </div>
     </>
   )

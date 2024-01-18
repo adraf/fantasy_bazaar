@@ -1,8 +1,8 @@
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
-import Toast from 'react-bootstrap/Toast';
-import ToastContainer from 'react-bootstrap/ToastContainer';
+// import Toast from 'react-bootstrap/Toast';
+// import ToastContainer from 'react-bootstrap/ToastContainer';
 
 
 export default function RegisterUser(){
@@ -12,9 +12,7 @@ export default function RegisterUser(){
 
   async function submitData(usersData) {
     try {
-      const res = await axios.post('api/auth/register/', usersData)
-      // const stagedData = res.data
-      // console.log('Success', stagedData)
+      await axios.post('api/auth/register/', usersData)
       navigate('/login')
     } catch (error) {
       console.log(error)
@@ -44,13 +42,11 @@ export default function RegisterUser(){
     event.preventDefault()
     const formData = new FormData(event.target)
     const usersData = Object.fromEntries(formData.entries())
-    // console.log(formData)
-    // console.log('authenticate', usersData)
 
     // TODO: password confirmation message - toast
     // if (usersData.password !== usersData.password_confirmation) {
-      const passwordToast = document.querySelector('.password_confirmation_toast')
-      passwordToast.style.display = 'none'
+      // const passwordToast = document.querySelector('.password_confirmation_toast')
+      // passwordToast.style.display = 'none'
     // }
     submitData(usersData)
   }
@@ -74,7 +70,7 @@ export default function RegisterUser(){
           </Toast.Body>
         </Toast>
       </ToastContainer> */}
-      <h2>RegisterUser</h2>
+      <h2>Register User</h2>
       <div>
         <form action='#' onSubmit={authenticate}>
           <input type='text' name='first_name' placeholder='First Name' value={inputs.first_name || ''} onChange={handleChange} required/>
@@ -84,9 +80,10 @@ export default function RegisterUser(){
           <input type='password' name='password' placeholder='Password' value={inputs.password || ''} onChange={handleChange} required/>
           <input type='password' name='password_confirmation' placeholder='Confirm Password' value={inputs.password_confirmation || ''} onChange={handleChange} required/>
           <input type='submit' name='submit_button' className='submit_button' value='Join Us' disabled={true}/>
-          {/* <button type='submit'>Join Us</button> */}
         </form>
       </div>
+      <p>Already have an account?</p>
+      <button><Link to='/login'>Login</Link></button>
     </>
   )
 }

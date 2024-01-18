@@ -2,13 +2,15 @@ import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { activeUser, getToken } from "../utils/helpers/common"
+import { useOutletContext } from 'react-router-dom'
 
 
 export default function UserEdit(){ 
   const userId = activeUser()
   const navigateTo = useNavigate()
   const [inputs, setInputs] = useState({})
-
+  // eslint-disable-next-line no-unused-vars
+  const [mainUserInfo, setMainUserInfo] = useOutletContext() 
 
   const handleChange = (event) => {
     const name = event.target.name
@@ -29,29 +31,33 @@ export default function UserEdit(){
     }
   }) 
 
-
   async function submitEdit(usersData) {
     // event.preventDefault()
+    // correct edited data in 'usersdata' at this point
     try {
-      const res = await axios.patch(`/api/auth/user/${userId}/`, {usersData}, {
+      const res = await axios.patch(`/api/auth/user/${userId}/`, usersData, {
         headers: {
           'Authorization': 'Bearer ' + getToken()
         }
       })
-      // const stagedData = res.data
-      // console.log('Success', stagedData)
-      console.log('EDIT PAGE', res.data)
-      navigateTo(`/auth/user/${userId}/`)
-      return res.data
-    } catch (error) {
-      console.log(error)
+        setMainUserInfo(res.data)
+        redirect()
+        return res.data
+      } catch (error) {
+        console.log(error)
+      }
     }
-  }
+  
+    async function redirect() {
+
+      navigateTo(`/auth/user/${activeUser()}/`)
+    }
 
   async function authenticate(event) {
     event.preventDefault()
     const formData = new FormData(event.target)
     const usersData = Object.fromEntries(formData.entries())
+    // correct edited data in 'usersdata' at this point
     await submitEdit(usersData)
   }
 
@@ -59,7 +65,7 @@ export default function UserEdit(){
 
   return (
     <>
-      <h1>Edit User Info</h1>
+      <h2>Edit User Info</h2>
       <div>
         <form action='#' onSubmit={authenticate}>
           {/* <input type='text' name='username' placeholder='Username' value={inputs.username || ''} onChange={handleChange} required/> */}

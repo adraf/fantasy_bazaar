@@ -41,17 +41,6 @@ class ComicFavView(UpdateAPIView):
 
   def patch(self, request, pk):
     comic = self.get_object()
-    # print(request.user)
-    # print('Favourited book?', request.user in comic.favourites.all())
-
-    # if request.user in comic.favourites.all():
-    #   comic.favourites.remove(request.user)
-    #   comic.save()
-    #   return Response(status=204)
-    # else:
-    #   comic.favourites.add(request.user)
-    #   comic.save()
-    #   return Response(status=201)
 
     if request.user in comic.favourites.all():
         comic.favourites.remove(request.user)

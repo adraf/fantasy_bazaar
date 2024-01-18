@@ -7,12 +7,11 @@ export async function getIndUser(id) {
       'Authorization': 'Bearer ' + getToken()
     }
   })
-  console.log('Loader', res.data)
+  // console.log('Loader', res.data)
   return res.data
 }
 
 export async function getUserData() {
   const res = await axios.get('api/auth/users/')
-  // console.log(res.data)
   return res.data
 }

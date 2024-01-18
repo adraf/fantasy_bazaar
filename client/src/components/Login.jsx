@@ -1,10 +1,11 @@
 import axios from 'axios'
-import { useLoaderData, useNavigate } from 'react-router-dom'
+import { Link, useLoaderData, useNavigate } from 'react-router-dom'
 import { activeUser, getToken, setToken } from '../utils/helpers/common'
 import { useOutletContext } from 'react-router-dom'
 
 export default function Login(){
   
+  // eslint-disable-next-line no-unused-vars
   const [mainUserInfo, setMainUserInfo] = useOutletContext()
 
   // Loaders
@@ -61,6 +62,7 @@ export default function Login(){
           <button type='submit'>Login</button>
         </form>
       </div>
+      <button><Link to='/register'>Register</Link></button>
     </>
   )
 }
