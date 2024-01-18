@@ -1,18 +1,14 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { addFavourite } from '../utils/actions/userAction'
-// Bootstrap
-import { Link } from 'react-router-dom'
 import { activeUser } from '../utils/helpers/common'
+import { Link } from 'react-router-dom'
+// import { useOutletContext } from 'react-router-dom'
 
 export default function ComicsAll(){
   // States
   const [allComics, setAllComics] = useState([])
-
-  // ! Change in App and pass down
-  // const currentUserID = localStorage.getItem('currentUserID')
-
-  const currentUserID = activeUser()
+  // const [mainUserInfo, setMainUserInfo] = useOutletContext() 
 
   const faveHeart = 
   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" className="bi bi-chat-heart-fill" viewBox="0 0 16 16">
@@ -35,29 +31,31 @@ export default function ComicsAll(){
     getComicData()
   }, []) 
   
+
   function isFavourite(userId, arr) {
-    return arr.some(user => user.id === currentUserID)
+    return arr.some(user => user.id === userId)
+  }
+
+  async function handleFavourite(event, id) {
+    event.preventDefault()
+    const allComicsCopy = [...allComics]
+    const updatedComic = await addFavourite(id)
+    const replaceComic = allComicsCopy.findIndex(comic => comic.id === updatedComic.id)
+    allComicsCopy[replaceComic] = updatedComic
+    setAllComics(allComicsCopy)
   }
 
   return (
     <>
       <section id='all-comics-main'>
-        {allComics.map(({ id, artwork, title, release_date, favourites }) => {
-          // console.log(favourites)
-          function handleFavourite(event) {
-            event.preventDefault()
-            // Gets ID of clicked parent container
-            const btnParentId = event.target.closest('.all-comics-section').id
-            addFavourite(btnParentId)
-          }
+        {allComics.map(comic => {
+          const { id, artwork, title, release_date, favourites } = comic
           return (
             <Link key={id} id={id} to={`/comics/${id}`} className='all-comics-section'>
               <div className='all-comics-image' style={{ backgroundImage: `url(${artwork})` }}>
-                <div className='all-comics-favourite-btn' onClick={handleFavourite}>
+                <div className='all-comics-favourite-btn' onClick={(e) => handleFavourite(e, id)}>
                   <div className='favourite-icon'>
-                    {
-                      isFavourite(currentUserID, favourites) ? faveHeart : noFaveHeart
-                    }
+                    {isFavourite(activeUser(), favourites) ? faveHeart : noFaveHeart}
                   </div>
                 </div>
               </div>

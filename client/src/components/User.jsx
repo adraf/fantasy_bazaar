@@ -20,7 +20,7 @@ export default function User(){
 
   // Loaders
   const singleUser = useLoaderData()
-
+  console.log(singleUser)
   const {
     id: userId,
     first_name,

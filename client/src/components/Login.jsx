@@ -1,8 +1,11 @@
 import axios from 'axios'
 import { useLoaderData, useNavigate } from 'react-router-dom'
-import { setToken } from '../utils/helpers/common'
+import { activeUser, getToken, setToken } from '../utils/helpers/common'
+import { useOutletContext } from 'react-router-dom'
 
 export default function Login(){
+  
+  const [mainUserInfo, setMainUserInfo] = useOutletContext()
 
   // Loaders
   const userInfo = useLoaderData()
@@ -12,11 +15,26 @@ export default function Login(){
       const res = await axios.post('api/auth/login/', usersData)
       const stagedData = res.data
       setToken(stagedData.access)
+      // console.log('STAGED', stagedData)
+      getIndUser(activeUser())
       navigate('/')
+      
       return stagedData
     } catch (error) {
       console.log(error)
     }
+  }
+
+  async function getIndUser(id) {
+    const res = await axios.get(`api/auth/user/${id}/`, {
+      headers: {
+        'Authorization': 'Bearer ' + getToken()
+      }
+    })
+  
+    setMainUserInfo(res.data)
+    // console.log('Loader In Login', res.data)
+    return res.data
   }
 
   function authenticate(event) {

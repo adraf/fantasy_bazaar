@@ -5,10 +5,10 @@ import { activeUser, getToken } from "../utils/helpers/common"
 
 
 export default function UserEdit(){ 
-
-  const [inputs, setInputs] = useState({})
-  const navigate = useNavigate()
   const userId = activeUser()
+  const navigateTo = useNavigate()
+  const [inputs, setInputs] = useState({})
+
 
   const handleChange = (event) => {
     const name = event.target.name
@@ -30,7 +30,8 @@ export default function UserEdit(){
   }) 
 
 
-  async function submitData(usersData) {
+  async function submitEdit(usersData) {
+    // event.preventDefault()
     try {
       const res = await axios.patch(`/api/auth/user/${userId}/`, {usersData}, {
         headers: {
@@ -39,19 +40,19 @@ export default function UserEdit(){
       })
       // const stagedData = res.data
       // console.log('Success', stagedData)
-      navigate(`/auth/user/${userId}`)
       console.log('EDIT PAGE', res.data)
+      navigateTo(`/auth/user/${userId}/`)
       return res.data
     } catch (error) {
       console.log(error)
     }
   }
 
-  function authenticate(event) {
+  async function authenticate(event) {
     event.preventDefault()
     const formData = new FormData(event.target)
     const usersData = Object.fromEntries(formData.entries())
-    submitData(usersData)
+    await submitEdit(usersData)
   }
 
 

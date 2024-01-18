@@ -1,22 +1,17 @@
-// import axios from 'axios'
-// import { useState, useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import { activeUser, removeToken } from "../utils/helpers/common"
 
-export default function NavBar(){
+export default function NavBar({ mainUserInfo, setMainUserInfo }){
 
-  const userId = activeUser()
-  
-  // ! Can get the ID, need to find username with it and change navbar 'Hi' message
-  // console.log('NAVBAR', userId)
-
-  // const username = userInfo.username
+  const userId = activeUser()  
+  const {first_name, username } = mainUserInfo
 
   const navigateTo = useNavigate()
 
   function logOut() {
     removeToken()
     navigateTo('/')
+    setMainUserInfo('')
     localStorage.clear()
   }
 
@@ -30,8 +25,8 @@ export default function NavBar(){
         <h1><Link to='/'>Fantasy Bazaar</Link></h1>
         {activeUser() ? 
           <div id="header-right-div">
-            {/* <Link to={`/auth/user/${userId}/`}>Hi, {!userInfo.first_name ? username : userInfo.first_name}</Link> */}
-            <Link to={`/auth/user/${userId}/`}>Account</Link>
+            <Link to={`/auth/user/${userId}/`}>Hi, {!first_name ? username : first_name}</Link>
+            {/* <Link to={`/auth/user/${userId}/`}>Account</Link> */}
             <Link to='/' onClick={logOut}>Logout</Link>
           </div>
           :

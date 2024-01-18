@@ -11,6 +11,7 @@ from lib.permissions import IsOwnerOrReadOnly
 # Methods: GET, POST
 class ComicListCreateView(OwnerListCreateView):
   queryset = Comic.objects.all()
+  # .select_related()
   serializer_class = ComicSerializer
   permission_classes = [IsAuthenticatedOrReadOnly]
 
@@ -40,14 +41,23 @@ class ComicFavView(UpdateAPIView):
 
   def patch(self, request, pk):
     comic = self.get_object()
-    print(request.user)
-    print('Favourited book?', request.user in comic.favourites.all())
+    # print(request.user)
+    # print('Favourited book?', request.user in comic.favourites.all())
+
+    # if request.user in comic.favourites.all():
+    #   comic.favourites.remove(request.user)
+    #   comic.save()
+    #   return Response(status=204)
+    # else:
+    #   comic.favourites.add(request.user)
+    #   comic.save()
+    #   return Response(status=201)
 
     if request.user in comic.favourites.all():
-      comic.favourites.remove(request.user)
-      comic.save()
-      return Response(status=204)
+        comic.favourites.remove(request.user)
     else:
-      comic.favourites.add(request.user)
-      comic.save()
-      return Response(status=201)
+        comic.favourites.add(request.user)
+
+    comic.save()
+    serializer = ComicListSerializer(comic)
+    return Response(serializer.data, status=201)

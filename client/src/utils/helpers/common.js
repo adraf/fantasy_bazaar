@@ -1,4 +1,4 @@
-const tokenName = 'Fantasy-Bazaar:Admit-One'
+const tokenName = 'auth_token'
 
 export async function formToObj(request){
   const formData = await request.formData()

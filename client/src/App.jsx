@@ -1,41 +1,35 @@
 import { Outlet } from 'react-router-dom'
-// import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { activeUser } from './utils/helpers/common.js'
+import { getToken } from '../src/utils/helpers/common.js'
+import axios from 'axios'
 import NavBar from './components/NavBar.jsx'
-// import { activeUser } from "../src/utils/helpers/common.js"
-// import { getIndUser } from './utils/loaders/userLoader.js'
-// import { useLoaderData } from 'react-router-dom'
-// import { getToken } from '../src/utils/helpers/common.js'
-// import axios from 'axios'
 
 function App() {
+  
+  const [mainUserInfo, setMainUserInfo] = useState([])
 
-  // state for user = null
-// const [userInfo, setUserInfo] = useState('')
-
-// on token update run function useEffect(page load and update state on token change)
-// make call for user info
-// useEffect(() => {
-//   async function handleUserData() {
-//     const userId = activeUser()
-//     const res = await axios.get(`api/auth/user/${userId}/`, {
-//       headers: {
-//         'Authorization': 'Bearer ' + getToken()
-//       }
-//     })
-//     setUserInfo(res.data)
-//     return res.data
-//   }
-//   handleUserData()
-// }, [])
+  useEffect(() => {
+    async function handleUserData() {
+      const res = await axios.get(`api/auth/user/${activeUser()}/`, {
+        headers: {
+          'Authorization': 'Bearer ' + getToken()
+        }
+      })
+      mainUserInfo.id !== activeUser() && setMainUserInfo(res.data)
+      // console.log('MAIN STATE', mainUserInfo)
+      return res.data
+    }
+    handleUserData()
+    console.log('MAIN STATE', mainUserInfo)
+  }, [mainUserInfo])
+ 
 
   return (
     <>
-      {/* pass userState to navbar */}
-      {/* <NavBar userInfo={userInfo} setUserInfo={setUserInfo} /> */}
-      <NavBar />
-      <Outlet />
+      <NavBar mainUserInfo={mainUserInfo} setMainUserInfo={setMainUserInfo}/>
+      <Outlet context={[mainUserInfo, setMainUserInfo]}/>
     </>
   )
 }
-
 export default App

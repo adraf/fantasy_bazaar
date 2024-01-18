@@ -19,12 +19,7 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
   permission_classes = [IsAuthenticated]
 
   def get_serializer_class(self):
-    if self.request.method == 'GET':
-      return UserInfoSerializer
-    return ComicListUserSerializer
-  
-  def get_serializer_class(self):
-    if self.request.method == 'PATCH':
+    if self.request.method == 'GET' or self.request.method == 'PATCH':
       return UserInfoSerializer
     return ComicListUserSerializer
   
