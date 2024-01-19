@@ -18,7 +18,7 @@ import User from './components/User.jsx'
 import UserEdit from './components/UserEdit.jsx';
 
 // Loaders
-import { getIndComic, getComicData } from './utils/loaders/comicLoader.js'
+import { getIndComic, filteredComicData } from './utils/loaders/comicLoader.js'
 import { getIndUser, getUserData } from './utils/loaders/userLoader.js'
 
 const router = createBrowserRouter([
@@ -43,18 +43,13 @@ const router = createBrowserRouter([
         path: '/character',
         element: <Character />
       },
-      // {
-      //   path: '/auth/user/:id',
-      //   element: <User/>,
-      //   loader: async ({ params }) => getIndUser(params.id)
-      // },
       {
         path: '/auth/user/:id',
         element: <User/>,
         loader: async ({ params }) => {
           const [userInfo, comicInfo] = await Promise.all([
             getIndUser(params.id),
-            getComicData(params.id)
+            filteredComicData(params.id)
           ])
           return {userInfo, comicInfo}
         }

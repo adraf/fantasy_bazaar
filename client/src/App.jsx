@@ -7,21 +7,20 @@ import NavBar from './components/NavBar.jsx'
 
 function App() {
   
-  const [mainUserInfo, setMainUserInfo] = useState([])
+  const [mainUserInfo, setMainUserInfo] = useState({})
 
   useEffect(() => {
     async function handleUserData() {
-      const res = await axios.get(`api/auth/user/${activeUser()}/`, {
+      const res = await axios.get(`/api/auth/user/${activeUser()}/`, {
         headers: {
           'Authorization': 'Bearer ' + getToken()
         }
       })
       mainUserInfo.id !== activeUser() && setMainUserInfo(res.data)
-      // console.log('MAIN STATE', mainUserInfo)
       return res.data
     }
     handleUserData()
-    console.log('MAIN STATE', mainUserInfo)
+    // console.log('MAIN STATE', mainUserInfo)
   }, [mainUserInfo])
  
 

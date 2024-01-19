@@ -1,0 +1,45 @@
+#register-main {
+  height: 80vh;
+  width: 100%;
+  @include flex(row, center, center)
+}
+
+.form-div-container {
+  @include flex(column, center, space-evenly);
+  height: 80%;
+  min-height: 500px;
+  width: 50%;
+  background-color: ($lightRed);
+  border-radius: 12px;
+  padding: 10px 0;
+  @media (max-width:767px) {
+    width: 80%;
+  }
+}
+
+form {
+  @include flex(column, center, space-evenly);
+  height: 80%;
+}
+
+input{
+  padding: 8px 10px;
+  margin: 4px;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-p {
+  padding: 0;
+  margin: 5px 0 0 0;
+  color: ($white);
+}
+
+.submit_button, button {
+  padding: 10px 15px;
+  border: none;
+  background-color: ($darkRed);
+  color: ($white);
+  border-radius: 5px;
+  margin: 10px;
+}

@@ -1,0 +1,19 @@
+// * Some styling in registerUser.scss
+#login-main, #user-edit-main {
+  height: 80vh;
+  width: 100%;
+  @include flex(row, center, center);
+}
+
+#login-container, #edit-container {
+  height: 40%;
+  min-height: 350px;
+  width: 40%;
+  @media (max-width:767px) {
+    width: 80%;
+  }
+}
+
+#login-form {
+  height: 60%;
+}

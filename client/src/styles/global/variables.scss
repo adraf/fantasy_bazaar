@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
 @mixin flex($direction, $align, $justify){
   display: flex;
   flex-direction: $direction;
   align-items: $align;
   justify-content: $justify;
 }
+

@@ -1,7 +1,7 @@
-import axios from "axios"
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { activeUser, getToken } from "../utils/helpers/common"
+import axios from 'axios'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { activeUser, getToken } from '../utils/helpers/common'
 import { useOutletContext } from 'react-router-dom'
 
 
@@ -61,20 +61,17 @@ export default function UserEdit(){
     await submitEdit(usersData)
   }
 
-
-
   return (
-    <>
-      <h2>Edit User Info</h2>
-      <div>
+    <section id='user-edit-main'>
+      <div className='form-div-container' id='edit-container'>
+        <p className='form-p'>Edit User Information</p>
         <form action='#' onSubmit={authenticate}>
-          {/* <input type='text' name='username' placeholder='Username' value={inputs.username || ''} onChange={handleChange} required/> */}
           <input type='text' name='first_name' placeholder='First Name' value={inputs.first_name || ''} onChange={handleChange} required/>
           <input type='text' name='last_name' placeholder='Last Name' value={inputs.last_name || ''} onChange={handleChange} required/>
           <input type='text' name='email' placeholder='Email' value={inputs.email || ''} onChange={handleChange} required/>
           <input type='submit' name='submit_button' className='submit_button' value='Save Edits' disabled={true}/>
         </form>
       </div>
-    </>
+    </section>
   )
 }

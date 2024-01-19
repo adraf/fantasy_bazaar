@@ -3,6 +3,7 @@
   width: 100%;
   margin-top: 10px;
   @include flex(row, center, space-evenly);
+  flex-wrap: wrap;
 }
 
 .all-comics-section {
@@ -10,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   padding: 5px;
-  margin: 10px;
+  margin: 5px 10px;
   text-decoration: none;
   color: black;
 }
@@ -22,7 +23,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  margin: 10px;
+  margin: 10px 10px 20px 10px;
 }
 
 .all-comics-info-div {
@@ -30,9 +31,14 @@
 }
 
 .all-comics-info-div p { 
+  display: flex;
+  align-items: center;
+  text-align: center;
   padding: 2px;
   margin: 0;
   font-size: 0.8em;
+  max-width: 140px;
+  height: 40px;
 }
 
 .all-comics-favourite-btn {

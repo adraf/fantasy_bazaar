@@ -9,6 +9,7 @@ export async function deleteUser(id) {
     }
   })
   console.log('complete')
+  localStorage.setItem('message', 'DELETED');
   return redirect('/register')
 }
 

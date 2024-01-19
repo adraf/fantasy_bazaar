@@ -2,18 +2,18 @@ header {
   @include flex(row, center, space-between);
   height: 120px;
   width: 100vw;
-  background-color: #b42b33;
+  background-color: ($lightRed);
 }
 
 header a {
-  color: white;
+  color: ($white);
   text-transform: uppercase
 }
 
 h1 {
   @include flex(row, center, center);
   align-items: center;
-  background-color: #7c0e1c;
+  background-color: ($darkRed);
   padding: 0.6em;
   max-width: 50vw;
   border-radius: 9px;

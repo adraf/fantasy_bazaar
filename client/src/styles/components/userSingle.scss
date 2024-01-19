@@ -1,0 +1,21 @@
+// * Some styling in comicSingle.scss
+#single-user-main {
+  height: 100%;
+  width: 100%;
+}
+
+.user-btn-div {
+  @include flex(column, center, space-evenly);
+  min-height: 200px;
+  width: 30%;
+
+}
+
+#user-info-div {
+  min-height: 200px;
+}
+
+.btn {
+  text-transform: uppercase;
+}
+

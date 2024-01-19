@@ -8,11 +8,14 @@
   text-transform: uppercase
 }
 
-#single-page-top {
+.single-page-top {
   @include flex(row, center, space-evenly);
   width: 90vw;
   height: auto;
   margin: 10px auto;
+  @media (max-width:767px) {
+    @include flex(column, center, space-evenly)
+  }
 }
 
 .single-page-image {
@@ -22,13 +25,18 @@
   background-position: center;
   background-size: contain;
   margin: 10px;
+  padding: 25px 10px;
+  background-color: white; 
 }
 
-#single-page-information {
+.single-page-information {
   @include flex(column, flex-start, space-evenly);
   width: 50%;
   min-height: 420px;
   padding: 2em;
+  @media (max-width:767px) {
+    width: 80%;
+  }
 }
 
 p {
@@ -50,7 +58,7 @@ p {
 }
 
 // Character Menu
-#single-page-linked-content {
+.single-page-linked-content {
   @include flex(row, center, space-between);
   overflow: auto;
   white-space: nowrap;

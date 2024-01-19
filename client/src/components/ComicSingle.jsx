@@ -1,4 +1,6 @@
+// import { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
+// import { useOutletContext } from 'react-router-dom'
 
 export default function ComicSingle(){
 
@@ -18,9 +20,9 @@ export default function ComicSingle(){
 
   return (
     <section key={comicId} id='single-comic-main'>
-      <section id='single-page-top'>
+      <section className='single-page-top'>
         <div className='single-page-image' style={{ backgroundImage: `url(${artwork})` }}></div>
-        <div id='single-page-information'>
+        <div className='single-page-information'>
           <h2 className='single-page-title'>{title}</h2>
           {authors.map(author => {
             const { id, name } = author
@@ -31,11 +33,11 @@ export default function ComicSingle(){
             )
           })}
           <p className='single-page-names'>{artist}</p>
-          <p className='single-page-date'>{release_date}</p>
+          <p className='single-page-date'>{release_date.split('-').reverse().slice(1).join(' - ')}</p>
           <p className='single-page-description'>{description}</p>
         </div>
       </section>
-      <div id='single-page-linked-content'>
+      <div className='single-page-linked-content'>
         {characters.map(character => {
           const { id, name } = character
           return (
