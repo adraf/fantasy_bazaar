@@ -31,7 +31,7 @@ export default function ComicsAll(){
     getComicData()
   }, []) 
   
-  // Checks if fave shoudl be on or off
+  // Checks if fave should be on or off
   function isFavourite(userId, arr) {
     return arr.some(user => user.id === userId)
   }

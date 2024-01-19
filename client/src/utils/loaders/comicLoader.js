@@ -10,7 +10,7 @@ export async function getIndComic(id) {
 export async function getComicData() {
     try {
       const res = await axios.get('api/comics/')
-      console.log(res.data)
+      // console.log(res.data)
       return res.data
     } catch (error) {
       console.log(error)

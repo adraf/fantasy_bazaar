@@ -1,11 +1,10 @@
 import { Link, useLoaderData, useNavigate } from 'react-router-dom'
 import { useOutletContext } from 'react-router-dom'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { deleteUser } from '../utils/actions/userAction'
 import { activeUser, removeToken } from '../utils/helpers/common';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { getComicData } from '../utils/loaders/comicLoader';
 
 export default function User(){
 
@@ -14,7 +13,6 @@ export default function User(){
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const navigate = useNavigate()
-  // const [allComics, setAllComics] = useState([])
 
   const {
     id: userId,
@@ -34,13 +32,10 @@ export default function User(){
   }
 
   const comicData = useLoaderData()
-  // console.log(comicData.comicInfo[0].favourites[0].id)
-  const filteredComics = comicData.comicInfo.filter(function(comic) {
-    return comic.favourites.filter(function(fav) {
-      fav.id === 8 
-    })}
-  )
-  console.log(filteredComics)
+  const allComicData = comicData.comicInfo 
+  const favouriteComics = allComicData.filter(comicFav => comicFav.favourites.find(fav => fav.id === activeUser()))
+  // console.log(favouriteComics)
+
 
   return (
     <>
@@ -81,20 +76,15 @@ export default function User(){
         <div id='single-page-linked-content'>
           <section>
             
-            {comicData.comicInfo.map(comic => {
-              const { id, artwork, title } = comic
+            {favouriteComics.map(comic => {
+              const { id, artwork, title, release_date } = comic
               return (
                 <Link key={id} id={id} to={`/comics/${id}`} className='all-comics-section'>
                   <div className='all-comics-image' style={{ backgroundImage: `url(${artwork})` }}>
-                    {/* <div className='all-comics-favourite-btn' onClick={(e) => handleFavourite(e, id)}> */}
-                      {/* <div className='favourite-icon'>
-                        {isFavourite(activeUser(), favourites) ? faveHeart : noFaveHeart}
-                      </div> */}
-                    {/* </div> */}
                   </div>
                   <div className='all-comics-info-div'>
                     <p>{title}</p>
-                    {/* <p>{release_date}</p> */}
+                    <p>{release_date}</p>
                   </div>
                 </Link>
               )
