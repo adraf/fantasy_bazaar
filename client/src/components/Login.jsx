@@ -23,7 +23,6 @@ export default function Login(){
       // console.log('STAGED', stagedData)
       getIndUser(activeUser())
       navigate('/')
-      
       return stagedData
     } catch (error) {
       console.log(error)

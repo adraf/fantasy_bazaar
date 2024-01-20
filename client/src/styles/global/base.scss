@@ -7,6 +7,10 @@
   text-transform: uppercase;
 }
 
+#root {
+  min-height: 100vh;
+}
+
 $backgroundWhite: #f8f9fa;
 $darkRed: #7c0e1c;
 $lightRed: #b42b33;
@@ -14,10 +18,17 @@ $white: #f8f9fa;
 $black: #232931;
 
 body {
-  min-height: 100vh;
   width: 100%;
   background-color: ($backgroundWhite);
-  // font-family: ;
+}
+
+.spinner {
+  margin: 20px auto;
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 a {
@@ -30,6 +41,6 @@ a {
 }
 
 .translate-middle {
-  width: 100%;
+  // width: 100%;
   height: 20%;
 }

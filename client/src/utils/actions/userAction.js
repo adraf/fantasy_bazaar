@@ -3,13 +3,13 @@ import { getToken } from '../helpers/common'
 import { redirect } from 'react-router-dom'
 
 export async function deleteUser(id) {
+  localStorage.setItem('message', 'DELETED')
   await axios.delete(`/api/auth/user/${id}/`, {
     headers: {
       'Authorization': 'Bearer ' + getToken()
     }
   })
-  console.log('complete')
-  localStorage.setItem('message', 'DELETED');
+  // console.log('complete at user action')
   return redirect('/register')
 }
 
@@ -26,6 +26,6 @@ export async function addFavourite(id) {
       }
     }
   )
-  console.log('PATCH', res.data)
+  // console.log('PATCH', res.data)
   return res.data
 }

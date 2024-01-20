@@ -39,7 +39,6 @@ export default function ComicsAll(){
     return arr.some(user => user.id === userId)
   }
 
-
   async function handleFavourite(event, id) {
     event.preventDefault()
     const allComicsCopy = [...allComics]

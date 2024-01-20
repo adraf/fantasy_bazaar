@@ -49,7 +49,6 @@ export default function UserEdit(){
     }
   
     async function redirect() {
-
       navigateTo(`/auth/user/${activeUser()}/`)
     }
 
