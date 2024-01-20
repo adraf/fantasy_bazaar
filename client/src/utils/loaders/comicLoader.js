@@ -29,4 +29,17 @@ export async function getComicData() {
     }
   }
 
+  // Get 10 random comics from collection for home page
+  export async function getRandomTen() {
+    try {
+      const res = await axios.get('/api/comics/')
+      const allComicData = res.data
+      const allComicsCopy = [...allComicData]
+      const randomComicsTen = allComicsCopy.sort(() => .5 - Math.random()).slice(0, 12)
+      return randomComicsTen
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 

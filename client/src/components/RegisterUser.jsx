@@ -6,7 +6,7 @@ import Toast from 'react-bootstrap/Toast'
 export default function RegisterUser(){
 
   const registerPage = useLocation()
-  console.log(registerPage.pathname === '/register')
+  // console.log(registerPage.pathname === '/register')
 
   useEffect(() => {
     function deleteAccount() {

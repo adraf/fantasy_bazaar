@@ -1,7 +1,7 @@
 #register-main {
   height: 80vh;
   width: 100%;
-  @include flex(row, center, center)
+  @include flex(row, center, center);
 }
 
 .form-div-container {

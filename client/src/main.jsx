@@ -15,10 +15,10 @@ import Home from './components/Home.jsx'
 import Login from './components/Login.jsx'
 import RegisterUser from './components/RegisterUser.jsx'
 import User from './components/User.jsx'
-import UserEdit from './components/UserEdit.jsx';
+import UserEdit from './components/UserEdit.jsx'
 
 // Loaders
-import { getIndComic, filteredComicData } from './utils/loaders/comicLoader.js'
+import { getIndComic, filteredComicData, getRandomTen, getComicData } from './utils/loaders/comicLoader.js'
 import { getIndUser, getUserData } from './utils/loaders/userLoader.js'
 
 const router = createBrowserRouter([
@@ -28,11 +28,13 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
+        loader: async ({ params }) => getRandomTen(params.id)
       },
       {
         path: '/comics_collection',
-        element: <ComicsAll/>
+        element: <ComicsAll/>,
+        loader: async ({ params }) => getComicData(params.id)
       },
       {
         path: '/comics/:id',

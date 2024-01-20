@@ -31,16 +31,16 @@ function App() {
       <main>
         {
           navigation.state === 'idle' ?
-          <Outlet context={[mainUserInfo, setMainUserInfo]}/>
+          <Outlet context={[mainUserInfo, setMainUserInfo]} />
           :
           <div className="spinner">
+            {/* <img src="https://i0.wp.com/boingboing.net/wp-content/uploads/2015/10/pJReN4H1.gif?w=970" alt="loading..." /> */}
             <Spinner animation="border">
               <span className="visually-hidden">Loading...</span>
             </Spinner>
           </div>
         }
       </main>
-      {/* <Outlet context={[mainUserInfo, setMainUserInfo]}/> */}
     </>
   )
 }

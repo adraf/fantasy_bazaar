@@ -4,14 +4,15 @@ import { addFavourite } from '../utils/actions/userAction'
 import { activeUser } from '../utils/helpers/common'
 import { Link } from 'react-router-dom'
 import Toast from 'react-bootstrap/Toast'
+import Spinner from 'react-bootstrap/esm/Spinner'
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function ComicsAll(){
   // States
   const [allComics, setAllComics] = useState([])
   const [showToast, setShowToast] = useState(false)
-
   const toggleShowToast = () => setShowToast(!showToast)
-  // const [mainUserInfo, setMainUserInfo] = useOutletContext() 
 
   const faveHeart = 
   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" className="bi bi-chat-heart-fill" viewBox="0 0 16 16">
@@ -53,6 +54,63 @@ export default function ComicsAll(){
     event.preventDefault()
     setShowToast(true)
   }
+
+  async function aToZTitle() {
+    const allComicsCopy = [...allComics]
+    const filterA = allComicsCopy.sort((a, b) => (a.title > b.title) ? 1 : -1)
+    setAllComics(filterA)
+    return allComics
+  }
+
+  async function zToATitle() {
+    const allComicsCopy = [...allComics]
+    const filterA = allComicsCopy.sort((a, b) => (a.title > b.title) ? 1 : -1)
+    setAllComics(filterA.reverse())
+    return allComics
+  }
+
+  async function oldNew() {
+    const allComicsCopy = [...allComics]
+    const filterA = allComicsCopy.sort((a, b) => (a.release_date > b.release_date) ? 1 : -1)
+    setAllComics(filterA)
+    return allComics
+  }
+
+  async function newOld() {
+    const allComicsCopy = [...allComics]
+    const filterA = allComicsCopy.sort((a, b) => (a.release_date > b.release_date) ? 1 : -1)
+    setAllComics(filterA.reverse())
+    return allComics
+  }
+
+  const charList = []
+  async function characters() {
+    const allComicsCopy = [...allComics]
+    const filterChar = allComicsCopy.map(comics => comics.characters.map(char => char.name))
+    const filteredCharList = filterChar.flat()
+    filteredCharList.sort()
+    charList.push(removeDupes(filteredCharList))
+  }
+  characters()
+
+  function removeDupes(data) {
+    return [...new Set(data)]
+  }
+  // charList.push(removeDupes(charList))
+
+  // function aToZAuthor() {
+  //   const allComicsCopy = [...allComics]
+  //   const filterA = allComicsCopy.sort((a, b) => (a.author > b.author) ? 1 : -1)
+  //   setAllComics(filterA)
+  //   return allComics
+  // }
+
+  // function zToAAuthor() {
+  //   const allComicsCopy = [...allComics]
+  //   const filterA = allComicsCopy.sort((a, b) => (a.author > b.author) ? 1 : -1)
+  //   setAllComics(filterA.reverse())
+  //   return allComics
+  // }
   
   return (
       <section id='all-comics-main'>
@@ -65,7 +123,42 @@ export default function ComicsAll(){
           </Toast.Header>
           <Toast.Body className='text-center'>You need to be logged in to save items to your favourites</Toast.Body>
         </Toast>
-        {allComics.map(comic => {
+        <nav className='filter-nav-comics-all'>
+          <Nav id='filter-nav'>
+            <NavDropdown title="Character" id="basic-nav-dropdown">
+              {charList.map(char => {
+                const { id: charId, character } = char
+                  return (
+                    <NavDropdown.Item key={charId} onClick={'#'}>{character}</NavDropdown.Item>
+                  )
+                })
+              }
+            </NavDropdown>
+            {/* <NavDropdown title="Character" id="basic-nav-dropdown">
+              <NavDropdown.Item onClick={'#'}>A to Z&nbsp;<i className="bi bi-arrow-down"></i></NavDropdown.Item>
+              <NavDropdown.Item onClick={'#'}>Z to A&nbsp;<i className="bi bi-arrow-up"></i></NavDropdown.Item>
+            </NavDropdown> */}
+            <NavDropdown title="Title" id="basic-nav-dropdown">
+              <NavDropdown.Item onClick={aToZTitle}>A to Z&nbsp;<i className="bi bi-arrow-down"></i></NavDropdown.Item>
+              <NavDropdown.Item onClick={zToATitle}>Z to A&nbsp;<i className="bi bi-arrow-up"></i></NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Release Date" id="basic-nav-dropdown">
+              <NavDropdown.Item onClick={newOld}>New to old&nbsp;<i className="bi bi-arrow-down"></i></NavDropdown.Item>
+              <NavDropdown.Item onClick={oldNew}>Old to new&nbsp;<i className="bi bi-arrow-up"></i></NavDropdown.Item>
+            </NavDropdown>
+            {/* <NavDropdown title="Author" id="basic-nav-dropdown">
+              <NavDropdown.Item onClick={aToZAuthor}>A to Z&nbsp;<i className="bi bi-arrow-down"></i></NavDropdown.Item>
+            </NavDropdown> */}
+          </Nav>
+        </nav>
+        {allComics === null ? 
+          <div className="spinner">
+            {/* <img src="https://i0.wp.com/boingboing.net/wp-content/uploads/2015/10/pJReN4H1.gif?w=970" alt="loading..." /> */}
+            <Spinner animation="border">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
+        : allComics.map(comic => {
           const { id, artwork, title, release_date, favourites } = comic
           return (
             <Link key={id} id={id} to={`/comics/${id}`} className='all-comics-section'>

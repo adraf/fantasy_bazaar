@@ -1,7 +1,6 @@
 #all-comics-main {
   height: 100%;
   width: 100%;
-  margin-top: 10px;
   @include flex(row, center, space-evenly);
   flex-wrap: wrap;
 }
@@ -52,4 +51,26 @@
 .bi-chat-heart {
   height: 2em;
   width: 2em;
+}
+
+// Filter Nav Menu
+.filter-nav-comics-all {
+  height: 50px;
+  width: 100%;
+  background-color: ($lightRed);
+  margin-bottom: 10px;
+}
+
+#basic-nav-dropdown {
+  color: white;
+}
+
+#filter-nav {
+  @include flex(row, center, space-evenly);
+  max-width: 800px;
+  list-style: none;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 1px;
+  flex-wrap: nowrap;
 }

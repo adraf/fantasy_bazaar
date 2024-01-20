@@ -1,0 +1,69 @@
+#home-main {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+}
+
+#comic-case {
+  background-color: ($darkRed);
+  margin: 40px 0;
+  width: 100vw;
+  @include flex(row, center, center);
+  position: relative;
+}
+
+.comic-both-shelves {
+  min-width: 840px;
+  max-width: 900px;
+  height: 40%;
+  // position: relative;
+  @include flex(row, center, space-evenly);
+  flex-wrap: wrap;
+}
+
+.comic-background-single {
+  // background-color: ($black);
+  margin: 10px;
+  height: 184px;
+  width: 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-top: 0.5px solid white;
+}
+
+.home-comics-image {
+  @include flex(row, flex-start, flex-end);
+  height: 184px;
+  width: 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0.75px 0 0 6px;
+  border-left: 1px solid black;
+  border-top: 0.5px solid white;
+}
+
+.comic-both-shelves div:nth-child(4) div {
+  transform: rotate(1deg);
+  margin: 2px 0 0 4px;
+}
+
+.comic-both-shelves div:nth-child(8) div {
+  transform: rotate(359deg);
+  margin: 2px 0 0 6px;
+}
+
+.comic-line-top, .comic-line-bottom {
+  position: absolute;
+  top: 20%;
+  width: 100vw;
+  color: white;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+}
+.comic-line-bottom {
+  top: 70%;
+}
