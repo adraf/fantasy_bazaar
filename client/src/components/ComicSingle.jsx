@@ -1,6 +1,4 @@
-// import { useEffect, useState } from 'react'
-import { useLoaderData } from 'react-router-dom'
-// import { useOutletContext } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 
 export default function ComicSingle(){
 
@@ -19,7 +17,7 @@ export default function ComicSingle(){
   } = singleComic
 
   return (
-    <section key={comicId} id='single-comic-main'>
+    <section key={comicId} className='single-comic-main'>
       <section className='single-page-top'>
         <div className='single-page-image' style={{ backgroundImage: `url(${artwork})` }}></div>
         <div className='single-page-information'>
@@ -39,10 +37,16 @@ export default function ComicSingle(){
       </section>
       <div className='single-page-linked-content'>
         {characters.map(character => {
-          const { id, name } = character
+          const { id, name, image } = character
           return (
-            <div key={id} className='content-div'>
-              <p>{name}</p>
+            <div key={id} className="char-background-single">
+              <Link id={id} to={`/characters/${id}`} className='single-shelf-comic' >
+                <div className='home-char-image single-page' style={{ backgroundImage: `url(${image})` }}>
+                </div>
+                <div className='all-comics-info-div'>
+                  <p>{name}</p>
+                </div>
+              </Link>
             </div>
           )
         })}

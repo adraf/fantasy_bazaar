@@ -18,9 +18,9 @@ import User from './components/User.jsx'
 import UserEdit from './components/UserEdit.jsx'
 
 // Loaders
-import { getIndComic, filteredComicData, getRandomTen, getComicData } from './utils/loaders/comicLoader.js'
+import { getIndComic, filteredComicData, getRandomTen, getComicData, filteredCharacterComicData } from './utils/loaders/comicLoader.js'
 import { getIndUser, getUserData } from './utils/loaders/userLoader.js'
-import { getAllCharacters, getAllAuthors } from './utils/loaders/characterLoader.js';
+import { getAllCharacters, getAllAuthors, getIndCharacter, homeCharsSix } from './utils/loaders/characterLoader.js';
 
 const router = createBrowserRouter([
   {
@@ -33,11 +33,10 @@ const router = createBrowserRouter([
         loader: async({ params }) => {
           const [comicInfo, characterInfo] = await Promise.all([
             getRandomTen(params.id),
-            getAllCharacters(params.id)
+            homeCharsSix(params.id)
           ])
           return{comicInfo, characterInfo}
         }
-        // loader: async ({ params }) => getRandomTen(params.id)
       },
       {
         path: '/comics_collection',
@@ -58,8 +57,15 @@ const router = createBrowserRouter([
         loader: async ({ params }) => getIndComic(params.id)
       },
       {
-        path: '/character',
-        element: <Character />
+        path: '/characters/:id',
+        element: <Character />,
+        loader: async ({ params }) => {
+          const [charInfo, comicInfo] = await Promise.all([
+            getIndCharacter(params.id),
+            filteredCharacterComicData(params.id)
+          ])
+          return {charInfo, comicInfo}
+        }
       },
       {
         path: '/auth/user/:id',

@@ -3,10 +3,7 @@ import { Link, useLoaderData } from "react-router-dom"
 
 export default function Home(){
 
-  // const [mainUserInfo, setMainUserInfo] = useOutletContext() 
-  // const navigate = useNavigate()
   const tenRandomComics = useLoaderData()
-
 
   return (
     <section id='home-main'>
@@ -33,17 +30,17 @@ export default function Home(){
       </section>
       <section className="home-character-list">
         { tenRandomComics.characterInfo.map(char => {
-          const { id:charId, name } = char
+          const { id:charId, name, image } = char
           return (
-            <div key={charId} className="comic-background-single" style={{ backgroundImage: `url()` }}>
-                <Link id={charId} to={`/character/${charId}`} className='single-shelf-comic' >
-                  {/* <div className='home-comics-image' style={{ backgroundImage: `url(${artwork})` }}>
-                  </div> */}
-                  <div className='all-comics-info-div'>
-                    <p>{name}</p>
-                  </div>
-                </Link>
-              </div>
+            <div key={charId} className="char-background-single" id="char-div-main">
+              <Link id={charId} to={`/characters/${charId}`} className='single-shelf-comic six-characters-main' >
+                <div className='home-char-image' id="home-char-image" style={{ backgroundImage: `url(${image})` }}>
+                </div>
+                <div className='all-comics-info-div'>
+                  <p>{name}</p>
+                </div>
+              </Link>
+            </div>
           )
         })}
       </section>

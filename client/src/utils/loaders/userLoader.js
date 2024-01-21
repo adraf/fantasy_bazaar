@@ -7,7 +7,6 @@ export async function getIndUser(id) {
       'Authorization': 'Bearer ' + getToken()
     }
   })
-  // console.log('Loader', res.data)
   return res.data
 }
 

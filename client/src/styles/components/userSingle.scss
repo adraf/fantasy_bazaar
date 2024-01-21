@@ -8,15 +8,20 @@
   @include flex(column, center, space-evenly);
   min-height: 200px;
   width: 30%;
-
+  @media (max-width:767px) {
+    margin: 0 auto;
+    flex-direction: row;
+  }
 }
 
 #user-info-div {
   min-height: 200px;
   padding: 0.7em 2em 0 2em;
+  text-align: center;
 }
 
 .btn {
   text-transform: uppercase;
 }
+
 

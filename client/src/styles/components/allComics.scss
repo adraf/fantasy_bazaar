@@ -13,7 +13,16 @@
   margin: 5px 10px;
   text-decoration: none;
   color: black;
+  transition: 0.3s ease-in-out;
 }
+
+.all-comics-section.main:hover {
+  background-color: ($lightPurple);
+  border-radius: 4px;
+  color: ($darkPurple);
+  transform: scale(1.02)
+}
+
 
 .all-comics-image {
   @include flex(row, flex-start, flex-end);
@@ -53,21 +62,37 @@
   width: 2em;
 }
 
+
 // Filter Nav Menu
 .filter-nav-comics-all {
   height: 50px;
+  padding-top: 6px;
   width: 100%;
-  background-color: ($lightRed);
+  background-color: ($darkPurple);
   margin-bottom: 10px;
+  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.3" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%3F1854"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+  $darkPurple;
+  background-size: 15px, 100%;
+  @media (max-width:767px) {
+    background-size: 12px, 100%;
+  }
 }
 
 #basic-nav-dropdown {
-  color: white;
+  color: ($backgroundWhite);
+  font-size: 14px;
+  @media (max-width:767px) {
+    font-size: 0.7em;
+  }
 }
 
 .character-dropdown .dropdown-menu.show {
   height: 50vh;
   overflow-y: auto;
+}
+
+.dropdown-item {
+  font-size: 14px;
 }
 
 #filter-nav {
@@ -78,4 +103,11 @@
   margin: 0 auto;
   padding: 1px;
   flex-wrap: nowrap;
+  @media (max-width:767px) {
+    // font-size: 12px;
+  }
+}
+
+#favourite-toast {
+  z-index: 2;
 }

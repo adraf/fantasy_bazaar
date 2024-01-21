@@ -4,6 +4,8 @@ import { activeUser } from './utils/helpers/common.js'
 import { getToken } from '../src/utils/helpers/common.js'
 import axios from 'axios'
 import NavBar from './components/NavBar.jsx'
+import Footer from './components/Footer.jsx'
+
 import Spinner from 'react-bootstrap/Spinner';
 
 function App() {
@@ -41,6 +43,7 @@ function App() {
           </div>
         }
       </main>
+      <Footer></Footer>
     </>
   )
 }

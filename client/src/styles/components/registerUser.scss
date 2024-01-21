@@ -9,7 +9,7 @@
   height: 80%;
   min-height: 500px;
   width: 50%;
-  background-color: ($lightRed);
+  background-color: ($darkPurple);
   border-radius: 12px;
   padding: 10px 0;
   @media (max-width:767px) {
@@ -20,6 +20,7 @@
 form {
   @include flex(column, center, space-evenly);
   height: 80%;
+  -webkit-appearance: none;
 }
 
 input{
@@ -27,6 +28,7 @@ input{
   margin: 4px;
   border: none;
   border-radius: 5px;
+  -webkit-appearance: none;
 }
 
 .form-p {
@@ -38,8 +40,9 @@ input{
 .submit_button, button {
   padding: 10px 15px;
   border: none;
-  background-color: ($darkRed);
+  background-color: ($lightPurple);
   color: ($white);
   border-radius: 5px;
   margin: 10px;
+  -webkit-appearance: none;
 }

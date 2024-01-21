@@ -1,4 +1,4 @@
-#single-comic-main {
+.single-comic-main {
   height: 100%;
   width: 100%;
 }
@@ -6,6 +6,9 @@
 .single-page-title {
   font-size: 3em;
   text-transform: uppercase;
+  @media (max-width:767px) {
+    text-align: center;
+  }
 }
 
 .single-page-top {
@@ -20,10 +23,10 @@
 
 .single-page-image {
   height: 380px;
-  width: 300px;
+  width: 240px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   margin: 10px;
   padding: 25px 10px;
   background-color: white; 
@@ -36,7 +39,12 @@
   padding: 2em;
   @media (max-width:767px) {
     width: 80%;
+    align-items: center;
   }
+}
+
+.single-page-image.character {
+  background-position: top;
 }
 
 p {
@@ -51,6 +59,9 @@ p {
 .single-page-description {
   font-size: 1.0em;
   text-transform: none;
+  @media (max-width:767px) {
+    text-align: center;
+  }
 }
 
 .single-page-date {
@@ -59,7 +70,7 @@ p {
 
 // Character Menu
 .single-page-linked-content {
-  @include flex(row, center, space-between);
+  @include flex(row, center, flex-start);
   overflow: auto;
   white-space: nowrap;
   padding: 20px;
@@ -70,4 +81,8 @@ p {
 .content-div {
   margin: 10px 25px;
   scroll-snap-align: center;
+}
+
+.home-char-image.single-page {
+  background-position: top;
 }
