@@ -1,0 +1,386 @@
+[
+{
+  "model": "characters.character",
+  "pk": 1,
+  "fields": {
+    "name": "Superman",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Supermanflying.png/220px-Supermanflying.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 2,
+  "fields": {
+    "name": "Batman",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Batman_Infobox.jpg/220px-Batman_Infobox.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 3,
+  "fields": {
+    "name": "Iron Man",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Iron_Man_%28circa_2018%29.png/220px-Iron_Man_%28circa_2018%29.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 4,
+  "fields": {
+    "name": "The Joker",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Batman_Three_Jokers.jpg/220px-Batman_Three_Jokers.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 5,
+  "fields": {
+    "name": "Fantastic Four",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Fantastic_Four_%28Marvel_Comics_characters%29.jpg/220px-Fantastic_Four_%28Marvel_Comics_characters%29.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 6,
+  "fields": {
+    "name": "X-Men",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/db/X-Men_%28Vol._6%29_No._2_Mahmud_Asrar_Variant_%28Textless%29.jpg/220px-X-Men_%28Vol._6%29_No._2_Mahmud_Asrar_Variant_%28Textless%29.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 7,
+  "fields": {
+    "name": "Avengers",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Avengers_%28Marvel_Comics%29_vol_3_num_38.jpg/220px-Avengers_%28Marvel_Comics%29_vol_3_num_38.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 8,
+  "fields": {
+    "name": "Spider-Man",
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 9,
+  "fields": {
+    "name": "Hulk",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Hulk_%28circa_2019%29.png/220px-Hulk_%28circa_2019%29.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 10,
+  "fields": {
+    "name": "Magneto",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Magneto_%28Marvel_Comics_character%29.jpg/220px-Magneto_%28Marvel_Comics_character%29.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 11,
+  "fields": {
+    "name": "Doctor Doom",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/60/Doctor_Doom_%282018%29.jpg/220px-Doctor_Doom_%282018%29.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 12,
+  "fields": {
+    "name": "Doctor Octopus",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Dr._Octopus_Marvel.jpg/220px-Dr._Octopus_Marvel.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 13,
+  "fields": {
+    "name": "Ultron",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Ultron2013.jpg/220px-Ultron2013.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 14,
+  "fields": {
+    "name": "Galactus",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Galactus_%282018%29.jpg/220px-Galactus_%282018%29.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 15,
+  "fields": {
+    "name": "Captain America",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/CaptainAmericaHughes.jpg/220px-CaptainAmericaHughes.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 16,
+  "fields": {
+    "name": "Captain Marvel",
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/3e/Generations_Captain_Marvel_%26_Captain_Mar-Vell.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 17,
+  "fields": {
+    "name": "Hawkeye",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Hawkeye_%28Clinton_Barton%29.png/220px-Hawkeye_%28Clinton_Barton%29.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 19,
+  "fields": {
+    "name": "She Hulk",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/16/She-Hulk_%28Modern_Comic_Book_Version%29.png/220px-She-Hulk_%28Modern_Comic_Book_Version%29.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 20,
+  "fields": {
+    "name": "Wasp",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/AVEN071.jpg/220px-AVEN071.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 21,
+  "fields": {
+    "name": "Cyclops",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Cyclops_%28Scott_Summers_circa_2019%29.png/220px-Cyclops_%28Scott_Summers_circa_2019%29.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 22,
+  "fields": {
+    "name": "Nightcrawler",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Nightcrawler_%28Kurt_Wagner_circa_2018%29.png/220px-Nightcrawler_%28Kurt_Wagner_circa_2018%29.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 23,
+  "fields": {
+    "name": "Professor X",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/00/Professor_Charles_%27X%27_Xavier.png/220px-Professor_Charles_%27X%27_Xavier.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 24,
+  "fields": {
+    "name": "Rogue",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Rogue_%28Marvel_Comics%29.png/220px-Rogue_%28Marvel_Comics%29.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 25,
+  "fields": {
+    "name": "Storm",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/34/Storm_%28Ororo_Munroe%29.png/220px-Storm_%28Ororo_Munroe%29.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 26,
+  "fields": {
+    "name": "Wolverine",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5d/Wolverine_%28James_%27Logan%27_Howlett%29.png/220px-Wolverine_%28James_%27Logan%27_Howlett%29.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 27,
+  "fields": {
+    "name": "Beyonder",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/85/SecretwarsII3.png/250px-SecretwarsII3.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 30,
+  "fields": {
+    "name": "Rorscach",
+    "image": "https://upload.wikimedia.org/wikipedia/en/b/be/Rorschach.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 31,
+  "fields": {
+    "name": "Dr. Manhattan",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/da/Doctor_Manhattan.png/220px-Doctor_Manhattan.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 32,
+  "fields": {
+    "name": "Silk Spectre",
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/9d/Silk_Spectre_%28Sally_%27Jupiter%27_Juspeczyk%29.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 33,
+  "fields": {
+    "name": "Thanos",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Thanos_Infinity_4.png/220px-Thanos_Infinity_4.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 34,
+  "fields": {
+    "name": "Adam Warlock",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Guardians-17.jpg/220px-Guardians-17.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 35,
+  "fields": {
+    "name": "Silver Surfer",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Silver_Surfer_01_cover.jpg/220px-Silver_Surfer_01_cover.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 36,
+  "fields": {
+    "name": "Daredevil",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Daredevil_65.jpg/220px-Daredevil_65.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 37,
+  "fields": {
+    "name": "Kingpin",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Kingpinm.png/250px-Kingpinm.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 38,
+  "fields": {
+    "name": "Jean Grey",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Jean_Grey_%28Modern%29.webp/220px-Jean_Grey_%28Modern%29.webp.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 39,
+  "fields": {
+    "name": "Kraven The Hunter",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Kraven_the_Hunter.png/220px-Kraven_the_Hunter.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 40,
+  "fields": {
+    "name": "Black Panther",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Black_Panther_OS_Vol_1_2.png/220px-Black_Panther_OS_Vol_1_2.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 41,
+  "fields": {
+    "name": "Wonder Woman",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/60/Wonder_Woman_%28circa_2020%29.png/220px-Wonder_Woman_%28circa_2020%29.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 42,
+  "fields": {
+    "name": "Lex Luthor",
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/9b/Lex_Luthor_%28comic_book_supervillain%29_infobox_image.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 43,
+  "fields": {
+    "name": "The Flash",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/The_Flash_Family.jpg/220px-The_Flash_Family.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 44,
+  "fields": {
+    "name": "Harvey Dent",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/02/TwoFaceYearOne.png/180px-TwoFaceYearOne.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 45,
+  "fields": {
+    "name": "Winter Soldier",
+    "image": "https://upload.wikimedia.org/wikipedia/en/8/8d/BuckyBarnes.jpeg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 46,
+  "fields": {
+    "name": "Thor",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Thor_Volume_2_Issue_11.jpg/220px-Thor_Volume_2_Issue_11.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 47,
+  "fields": {
+    "name": "Doctor Strange",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Doctor_Strange_Vol_4_2_Ross_Variant_Textless.jpg/220px-Doctor_Strange_Vol_4_2_Ross_Variant_Textless.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 48,
+  "fields": {
+    "name": "Wong",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Marvel%27s_Wong_%282022%29.webp/220px-Marvel%27s_Wong_%282022%29.webp.png"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 49,
+  "fields": {
+    "name": "Catwoman",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Catwoman_Infobox.jpg/220px-Catwoman_Infobox.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 50,
+  "fields": {
+    "name": "Green Lantern",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Green_Lantern_Rebirth_6.jpg/220px-Green_Lantern_Rebirth_6.jpg"
+  }
+},
+{
+  "model": "characters.character",
+  "pk": 51,
+  "fields": {
+    "name": "Sinestro",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Sinestro_%28circa_2011%29.png/220px-Sinestro_%28circa_2011%29.png"
+  }
+}
+]

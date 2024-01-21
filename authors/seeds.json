@@ -1,0 +1,128 @@
+[
+{
+  "model": "authors.author",
+  "pk": 1,
+  "fields": {
+    "name": "Frank Miller"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 3,
+  "fields": {
+    "name": "Alan Moore"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 4,
+  "fields": {
+    "name": "Brian Bolland"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 5,
+  "fields": {
+    "name": "Jonathan Hickman"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 7,
+  "fields": {
+    "name": "Kurt Busiek"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 8,
+  "fields": {
+    "name": "Jim Starlin"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 9,
+  "fields": {
+    "name": "Chris Claremont"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 10,
+  "fields": {
+    "name": "J.M. DeMatteis"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 11,
+  "fields": {
+    "name": "Ta-Nehisi Coates"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 12,
+  "fields": {
+    "name": "Mark Millar"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 13,
+  "fields": {
+    "name": "Greg Rucka"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 14,
+  "fields": {
+    "name": "Geoff Johns"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 15,
+  "fields": {
+    "name": "Jeph Loeb"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 16,
+  "fields": {
+    "name": "Ed Brubaker"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 17,
+  "fields": {
+    "name": "Jason Aaron"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 18,
+  "fields": {
+    "name": "Brian K. Vaughan"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 19,
+  "fields": {
+    "name": "Warren Ellis"
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 20,
+  "fields": {
+    "name": "Mark Waid"
+  }
+}
+]
