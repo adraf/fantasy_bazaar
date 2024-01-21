@@ -20,6 +20,7 @@ import UserEdit from './components/UserEdit.jsx'
 // Loaders
 import { getIndComic, filteredComicData, getRandomTen, getComicData } from './utils/loaders/comicLoader.js'
 import { getIndUser, getUserData } from './utils/loaders/userLoader.js'
+import { getAllCharacters, getAllAuthors } from './utils/loaders/characterLoader.js';
 
 const router = createBrowserRouter([
   {
@@ -29,12 +30,27 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader: async ({ params }) => getRandomTen(params.id)
+        loader: async({ params }) => {
+          const [comicInfo, characterInfo] = await Promise.all([
+            getRandomTen(params.id),
+            getAllCharacters(params.id)
+          ])
+          return{comicInfo, characterInfo}
+        }
+        // loader: async ({ params }) => getRandomTen(params.id)
       },
       {
         path: '/comics_collection',
         element: <ComicsAll/>,
-        loader: async ({ params }) => getComicData(params.id)
+        // loader: async ({ params }) => getComicData(params.id)
+        loader: async({ params }) => {
+          const [comicInfo, characterInfo, authorInfo] = await Promise.all([
+            getComicData(params.id),
+            getAllCharacters(params.id),
+            getAllAuthors(params.id)
+          ])
+          return{comicInfo, characterInfo, authorInfo}
+        }
       },
       {
         path: '/comics/:id',

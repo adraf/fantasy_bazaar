@@ -65,6 +65,11 @@
   color: white;
 }
 
+.character-dropdown .dropdown-menu.show {
+  height: 50vh;
+  overflow-y: auto;
+}
+
 #filter-nav {
   @include flex(row, center, space-evenly);
   max-width: 800px;
