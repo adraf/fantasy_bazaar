@@ -24,5 +24,5 @@ urlpatterns = [
     path('api/comics/', include('comics.urls')),
     path('api/authors/', include('authors.urls')),
     path('api/characters/', include('characters.urls')),
-    re_path(r'^.*$', index),
+    re_path(r'^.*$', index)
 ]
