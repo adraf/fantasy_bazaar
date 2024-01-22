@@ -11,6 +11,7 @@ pylint = "*"
 djangorestframework-simplejwt = "*"
 django-environ = "*"
 django-cors-headers = "*"
+django-on-heroku = "*"
 
 [dev-packages]
 
