@@ -22,7 +22,6 @@ export async function getComicData() {
       const res = await axios.get('/api/comics/')
       const allComicData = res.data
       const favouriteComics = allComicData.filter(comicFav => comicFav.favourites.find(fav => fav.id === activeUser()))
-      // console.log('FCD', favouriteComics)
       return favouriteComics
     } catch (error) {
       console.log(error)
