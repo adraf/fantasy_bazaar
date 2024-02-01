@@ -26,7 +26,7 @@ Started planning in the afternoon of Thursday 11th January for presentations on 
 
  ## Technologies Used
 
-HTML, CSS, JavaScript, Python, Django, Sass, Node.js, Vite, React, Axios, JSON, JWT, npm, Dotenv, React Bootstrap, Git, GitHub, Heroku, Bearer Tokens, Chrome DevTools.
+HTML, CSS, JavaScript, Python, Django, Django REST framework, PostgreSQL, Sass, Node.js, Vite, React, Axios, JSON, JWT, npm, Dotenv, React Bootstrap, Git, GitHub, Heroku, Bearer Tokens, Chrome DevTools.
 
 Insomnia, Excalidraw, Quick DBD, Trello, VS Code.
 
