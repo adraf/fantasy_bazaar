@@ -361,3 +361,67 @@ More styling but the release date needs to be reformatted to be more user friend
 * A bit more styling to tweak everything to be more user friendly, hover changes on Login and Register buttons for example. 
 * In single comic view, have the functionality for users to like/unlike comics too. 
 * Speed up loading times of comics and information.
+
+----
+
+## Migration from Heroku to Railway
+
+After the original deployment, the project was migrated from Heroku to Railway as a more cost-effective hosting solution. The live link has been updated to reflect this.
+
+[Fantasy Bazaar Live Link](https://fantasy-bazaar.up.railway.app)
+
+#### Why Railway?
+
+Heroku removed its free tier a few years ago and costs can spiral quickly for a small project. Railway offers usage-based pricing which for a portfolio project like this works out significantly cheaper — a small app like this runs at around $2-5/month rather than Heroku's steeper entry point.
+
+#### What changed
+
+The migration required a few changes to the codebase to make it compatible with Railway's setup.
+
+`django-on-heroku` was removed from the project as it is Heroku-specific, and `gunicorn` and `whitenoise` were added in its place to handle the production server and static file serving respectively.
+
+```
+pipenv install gunicorn whitenoise
+pipenv uninstall django-on-heroku
+```
+
+The `Procfile` was updated to use gunicorn instead of Django's development server, which is not suitable for production.
+
+```
+web: gunicorn project.wsgi --log-file -
+```
+
+`settings.py` needed a few updates. `DEBUG` was changed to read from an environment variable rather than being hardcoded to `True`, `ALLOWED_HOSTS` was updated to allow Railway's domain, and the database configuration was simplified to read from a single `DATABASE_URL` environment variable which Railway injects automatically from its linked Postgres service.
+
+```python
+DEBUG = env.bool('DEBUG', default=False)
+
+ALLOWED_HOSTS = ['*']
+
+DATABASES = {
+    'default': env.db('DATABASE_URL')
+}
+```
+
+The static files config was also tidied up — `STATIC_ROOT` and `STATICFILES_DIRS` had a conflict where both were pointing at the same folder, which would cause `collectstatic` to fail. This was resolved by pointing `STATIC_ROOT` at a separate `staticfiles` directory and adding the Whitenoise storage backend.
+
+```python
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+```
+
+A `requirements.txt` was generated from the Pipfile as Railway uses this rather than Pipfile to install dependencies.
+
+```
+pipenv requirements > requirements.txt
+```
+
+#### Environment variables
+
+On Railway, the following environment variables need to be set on the web service:
+
+* `SECRET_KEY` — the Django secret key
+* `DEBUG` — set to `False`
+* `DATABASE_URL` — injected automatically by Railway when a Postgres service is linked, but needs to be manually referenced as a variable in the web service settings
+
