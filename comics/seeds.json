@@ -4,7 +4,7 @@
   "pk": 8,
   "fields": {
     "title": "Year One",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/a/a0/Batman-Year_One_%28cover%29.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/b/b1/Batman_vol._1-404_%28January_1987%29.jpg",
     "artist": "David Mazzucchelli",
     "description": "The story recounts Batman's first year as a crime-fighter as well as exploring the life of recently transferred Gotham police detective Jim Gordon – eventually building towards their first encounter and their eventual alliance against Gotham's criminal underworld.",
     "release_date": "1987-02-01",
@@ -40,7 +40,7 @@
   "pk": 11,
   "fields": {
     "title": "Marvels",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Marvels-01-nm-marvel.jpg/220px-Marvels-01-nm-marvel.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/e/e4/Marvels-01-nm-marvel.jpg",
     "artist": "Alex Ross",
     "description": "Explores the Marvel Universe through the eyes of an ordinary photographer, showcasing the impact of superheroes on everyday people.",
     "release_date": "1986-01-01",
@@ -52,7 +52,7 @@
   "pk": 12,
   "fields": {
     "title": "Watchmen",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Watchmen%2C_issue_1.jpg/220px-Watchmen%2C_issue_1.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/a/a2/Watchmen%2C_issue_1.jpg",
     "artist": "Dave Gibbons",
     "description": "A groundbreaking graphic novel that deconstructs the superhero genre, presenting a complex narrative with morally ambiguous characters.",
     "release_date": "1987-01-01",
@@ -64,7 +64,7 @@
   "pk": 13,
   "fields": {
     "title": "The Infinity Gauntlet",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/a/af/Infinity_Gauntlet_1.jpg/220px-Infinity_Gauntlet_1.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/a/af/Infinity_Gauntlet_1.jpg",
     "artist": "George Perez",
     "description": "Thanos wields the Infinity Gauntlet, challenging the entire Marvel Universe, in this epic cosmic storyline.",
     "release_date": "1991-01-01",
@@ -88,7 +88,7 @@
   "pk": 15,
   "fields": {
     "title": "X-Men: God Loves, Man Kills",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/0/03/X-Men_God_Loves_Man_Kills_cover.jpg/220px-X-Men_God_Loves_Man_Kills_cover.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/0/03/X-Men_God_Loves_Man_Kills_cover.jpg",
     "artist": "Brent Anderson",
     "description": "The X-Men confront prejudice and discrimination as they face a new adversary threatening mutants.",
     "release_date": "1982-01-01",
@@ -100,7 +100,7 @@
   "pk": 16,
   "fields": {
     "title": "The Dark Phoenix Saga",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/XMen135.jpg/220px-XMen135.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/5/5e/XMen135.jpg",
     "artist": "John Byrne",
     "description": "The X-Men face internal and external challenges as Jean Grey transforms into the powerful and unstable Dark Phoenix.",
     "release_date": "1980-01-01",
@@ -121,22 +121,10 @@
 },
 {
   "model": "comics.comic",
-  "pk": 18,
-  "fields": {
-    "title": "Black Panther: A Nation Under Our Feet",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Black_Panther_Vol_6_1.jpg/220px-Black_Panther_Vol_6_1.jpg",
-    "artist": "Brian Stelfreeze",
-    "description": "Ta-Nehisi Coates redefines Black Panther as T'Challa faces political turmoil and external threats to Wakanda.",
-    "release_date": "2016-01-01",
-    "owner": 1, "authors": [11], "characters": [40], "favourites": []
-  }
-},
-{
-  "model": "comics.comic",
   "pk": 19,
   "fields": {
     "title": "Superman: Red Son",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/Supermanredson.jpg/220px-Supermanredson.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/d/dd/Supermanredson.jpg",
     "artist": "Dave Johnson",
     "description": "An alternate reality story where Superman's spaceship lands in the Soviet Union, leading to a world where Superman becomes a symbol of communism.",
     "release_date": "2003-01-01",
@@ -148,7 +136,7 @@
   "pk": 20,
   "fields": {
     "title": "Wonder Woman: The Hiketeia",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/Hiketeia.jpg/220px-Hiketeia.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/e/e0/Hiketeia.jpg",
     "artist": "J.G. Jones",
     "description": "Wonder Woman is bound by an ancient ritual to protect a young woman who is being pursued by Batman, leading to a complex ethical dilemma.",
     "release_date": "2002-01-01",
@@ -172,7 +160,7 @@
   "pk": 22,
   "fields": {
     "title": "Batman: The Long Halloween",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Batman_thelonghalloween.jpg/220px-Batman_thelonghalloween.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/5/52/Batman_thelonghalloween.jpg",
     "artist": "Tim Sale",
     "description": "A mystery story that unfolds over the course of a year, focusing on Batman's quest to stop a serial killer in Gotham City.",
     "release_date": "1997-01-01",
@@ -208,7 +196,7 @@
   "pk": 25,
   "fields": {
     "title": "Doctor Strange: The Oath",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Dr_Strange_The_Oath_01_cover.jpg/220px-Dr_Strange_The_Oath_01_cover.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/b/b7/Dr_Strange_The_Oath_01_cover.jpg",
     "artist": "Marcos Martin",
     "description": "Doctor Strange embarks on a mystical quest to find a cure for Wong, his loyal ally, while uncovering a dark conspiracy.",
     "release_date": "2006-01-01",
@@ -217,22 +205,10 @@
 },
 {
   "model": "comics.comic",
-  "pk": 26,
-  "fields": {
-    "title": "Daredevil: The Man Without Fear",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Daredevil_Man_Without_Fear_1.jpg/220px-Daredevil_Man_Without_Fear_1.jpg",
-    "artist": "John Romita Jr.",
-    "description": "A retelling of Daredevil's origin, exploring Matt Murdock's journey from a young man blinded by a radioactive substance to the fearless hero of Hell's Kitchen.",
-    "release_date": "1993-01-01",
-    "owner": 1, "authors": [1], "characters": [36, 37], "favourites": []
-  }
-},
-{
-  "model": "comics.comic",
   "pk": 27,
   "fields": {
     "title": "Iron Man: Extremis",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Iron_Man_Extremis.jpg/220px-Iron_Man_Extremis.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/7/7c/Iron_Man_Extremis.jpg",
     "artist": "Adi Granov",
     "description": "Tony Stark undergoes a transformation when a dangerous new technology called Extremis emerges, leading to a redefinition of Iron Man's capabilities.",
     "release_date": "2005-01-01",
@@ -244,35 +220,11 @@
   "pk": 28,
   "fields": {
     "title": "Spider-Man: Blue",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Spider-Man-Blue.png/220px-Spider-Man-Blue.png",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/1/1e/Spider-Man-Blue.png",
     "artist": "Tim Sale",
     "description": "Peter Parker reflects on his early days as Spider-Man, focusing on his relationships with Gwen Stacy and Mary Jane Watson.",
     "release_date": "2003-01-01",
     "owner": 1, "authors": [15], "characters": [8], "favourites": [2]
-  }
-},
-{
-  "model": "comics.comic",
-  "pk": 29,
-  "fields": {
-    "title": "Wolverine: Old Man Logan",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d0/OldManLogan.jpg/220px-OldManLogan.jpg",
-    "artist": "Steve McNiven",
-    "description": "In a dystopian future, an aged Wolverine takes on a dangerous mission across a transformed United States.",
-    "release_date": "2008-01-01",
-    "owner": 1, "authors": [12], "characters": [26], "favourites": [2]
-  }
-},
-{
-  "model": "comics.comic",
-  "pk": 30,
-  "fields": {
-    "title": "Avengers: Infinity War",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Infinity_War_1.jpg/220px-Infinity_War_1.jpg",
-    "artist": "George Perez",
-    "description": "The Avengers unite to confront the cosmic threat of Thanos wielding the powerful Infinity Gauntlet.",
-    "release_date": "1992-01-01",
-    "owner": 1, "authors": [8], "characters": [33, 46, 15, 34, 35, 36, 5, 6, 3, 8, 11, 14, 26], "favourites": []
   }
 },
 {
@@ -292,7 +244,7 @@
   "pk": 32,
   "fields": {
     "title": "Superman: Birthright",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Birthright01cover.jpg/220px-Birthright01cover.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/6/69/Birthright01cover.jpg",
     "artist": "Leinil Francis Yu",
     "description": "A modern retelling of Superman's origin, exploring his early years and the challenges he faces as he embraces his role as Earth's protector.",
     "release_date": "2004-01-01",
@@ -304,7 +256,7 @@
   "pk": 33,
   "fields": {
     "title": "Justice League: The Darkseid War",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/Darkseidwar.jpeg/220px-Darkseidwar.jpeg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/0/0e/Darkseidwar.jpeg",
     "artist": "Jason Fabok",
     "description": "The Justice League faces cosmic threats and internal conflicts as they become entangled in the epic Darkseid War.",
     "release_date": "2016-01-01",
@@ -316,7 +268,7 @@
   "pk": 34,
   "fields": {
     "title": "The Flash: Rebirth",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/The_Flash_Rebirth_%28hardcover_collection%29.jpg/220px-The_Flash_Rebirth_%28hardcover_collection%29.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/1/17/The_Flash_Rebirth_%28hardcover_collection%29.jpg",
     "artist": "Ethan Van Sciver",
     "description": "Barry Allen returns as The Flash, dealing with the repercussions of his resurrection and facing a familiar foe from his past.",
     "release_date": "2009-01-01",
@@ -328,7 +280,7 @@
   "pk": 35,
   "fields": {
     "title": "Batman: The Dark Knight Returns",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Dark_knight_returns.jpg/220px-Dark_knight_returns.jpg",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/7/77/Dark_knight_returns.jpg",
     "artist": "Klaus Janson",
     "description": "An older Batman comes out of retirement to face a dystopian Gotham City and clashes with old foes, including Superman.",
     "release_date": "1986-01-01",
@@ -352,7 +304,7 @@
   "pk": 37,
   "fields": {
     "title": "Green Lantern: Rebirth",
-    "artwork": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Green_Lantern-Rebirth_%28collection%29.png/220px-Green_Lantern-Rebirth_%28collection%29.png",
+    "artwork": "https://upload.wikimedia.org/wikipedia/en/b/b0/Green_Lantern-Rebirth_%28collection%29.png",
     "artist": "Ethan Van Sciver",
     "description": "Hal Jordan returns to the role of Green Lantern, overcoming his fall into madness and the influence of the fear entity Parallax.",
     "release_date": "2005-01-01",
